@@ -1,0 +1,14 @@
+{
+  "name": "sitio",
+  "scripts": {
+    "serve": "eleventy --serve --quiet & tailwindcss -i ./src/tailwind.css -o ./_site/styles.css --watch",
+    "build": "ELEVENTY_ENV=production eleventy && tailwindcss -i ./src/tailwind.css -o ./_site/styles.css --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "tailwindcss": "^3.3.2"
+  }
+}
