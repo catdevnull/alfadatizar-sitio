@@ -113,7 +113,7 @@ export async function render(data) {
             </a>
           </div>
         </section>
-        <section class="box-border grid w-full grid-cols-2 justify-center gap-[1px] gap-y-6 bg-amarillo px-[10%] py-12 md:grid-cols-4">
+        <section class="grid w-full grid-cols-2 justify-center gap-[1px] gap-y-6 bg-amarillo px-[10%] py-12 md:grid-cols-4">
           {data.frontpageFooterButtons.map(
             ({ content, buttonText, buttonUrl }) => (
               <div class="flex flex-col justify-end">
@@ -127,6 +127,56 @@ export async function render(data) {
               </div>
             )
           )}
+        </section>
+        <section class="grid grid-cols-10 gap-8 bg-blanco px-[10%] py-8">
+          <div class="border-gray-500 col-span-4 border-l pl-4">
+            <h2 class="py-2 text-xl font-semibold">Socios</h2>
+            <div class="grid grid-cols-3">
+              {Array(6)
+                .fill(0)
+                .map(() => (
+                  <img
+                    class="grayscale"
+                    src="udesa.png"
+                    alt="logo de la universidad de san andrés"
+                  />
+                ))}
+            </div>
+          </div>
+          <div class="border-gray-500 col-span-3 border-l pl-4">
+            <h2 class="py-2 text-xl font-semibold">Socios etec lab</h2>
+            <div class="grid grid-cols-2">
+              {Array(4)
+                .fill(0)
+                .map(() => (
+                  <img
+                    class="grayscale"
+                    src="udesa.png"
+                    alt="logo de la universidad de san andrés"
+                  />
+                ))}
+            </div>
+          </div>
+          <div class="border-gray-500 col-span-3 border-l pl-4">
+            <h2 class="py-2 text-xl font-semibold">Donantes</h2>
+            <div class="grid grid-cols-2">
+              {Array(4)
+                .fill(0)
+                .map(() => (
+                  <img
+                    class="grayscale"
+                    src="udesa.png"
+                    alt="logo de la universidad de san andrés"
+                  />
+                ))}
+            </div>
+          </div>
+        </section>
+        <section class="flex flex-wrap justify-between gap-8 bg-violeta px-32 py-24">
+          <p class="text-3xl">TODO: logo</p>
+          <a class="text-xl" href="mailto:alfadatizando@gmail.com">
+            alfadatizando@gmail.com
+          </a>
         </section>
       </body>
     </html>
