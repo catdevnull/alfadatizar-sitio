@@ -1,0 +1,18 @@
+{
+  "celeste": {
+    "título": "Datos",
+    "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus, molestiae provident eum nam labore quam, magnam illo ex doloribus amet nisi praesentium aperiam aliquid. Atque nostrum iste iusto tempore quae."
+  },
+  "amarillo": {
+    "título": "Datos",
+    "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus, molestiae provident eum nam labore quam, magnam illo ex doloribus amet nisi praesentium aperiam aliquid. Atque nostrum iste iusto tempore quae."
+  },
+  "naranja": {
+    "título": "Datos",
+    "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus, molestiae provident eum nam labore quam, magnam illo ex doloribus amet nisi praesentium aperiam aliquid. Atque nostrum iste iusto tempore quae."
+  },
+  "violeta": {
+    "título": "Datos",
+    "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus, molestiae provident eum nam labore quam, magnam illo ex doloribus amet nisi praesentium aperiam aliquid. Atque nostrum iste iusto tempore quae."
+  }
+}
