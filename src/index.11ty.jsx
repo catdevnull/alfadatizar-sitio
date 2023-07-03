@@ -59,22 +59,16 @@ export async function render(data) {
             {Object.entries(data.frontpageCuadrados).map(
               ([color, { título, content }]) => {
                 // ¿por qué así en vez de `bg-${color}`? para que lo detecte tailwind.
-                const bgs = {
+                const classes = {
                   celeste: "bg-celeste",
-                  amarillo: "bg-amarillo",
-                  naranja: "bg-naranja",
-                  violeta: "bg-violeta",
-                };
-                const pos = {
-                  celeste: "",
-                  amarillo: "lg:order-last xl:order-none",
-                  naranja: "xl:order-last",
-                  violeta: "lg:order-last",
+                  amarillo: "bg-amarillo lg:order-last xl:order-none",
+                  naranja: "bg-naranja xl:order-last",
+                  violeta: "bg-violeta lg:order-last",
                 };
                 return (
                   <div class="grid lg:grid-cols-2">
                     <div
-                      class={`aspect-square h-auto w-full max-w-[24rem] overflow-y-scroll ${bgs[color]} ${pos[color]}`}
+                      class={`aspect-square h-auto w-full max-w-[24rem] overflow-y-scroll ${classes[color]}`}
                     ></div>
                     <div class="aspect-square h-auto w-full max-w-[24rem] overflow-y-scroll p-8">
                       <h2 class="mb-4 text-4xl">{título}</h2>
