@@ -46,7 +46,7 @@ export async function render(data) {
           <h2 class="pb-8 text-center text-5xl font-bold">Nuevos saberes</h2>
           <div class="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4">
             {data.frontpageNuevosSaberes.map(({ número, título, content }) => (
-              <div class="border-current flex-1 border-l px-6 py-6">
+              <div class="flex-1 border-l border-current px-6 py-6">
                 <h3 class="pb-4 font-mono text-2xl italic">{número}</h3>
                 <h3 class="pb-4 text-2xl font-bold">{título}</h3>
                 <p>{content}</p>
@@ -129,47 +129,17 @@ export async function render(data) {
           )}
         </section>
         <section class="grid grid-cols-10 gap-8 bg-blanco px-[10%] py-8">
-          <div class="border-gray-500 col-span-4 border-l pl-4">
+          <div class="col-span-4 border-l border-gray-500 pl-4">
             <h2 class="py-2 text-xl font-semibold">Socios</h2>
-            <div class="grid grid-cols-3">
-              {Array(6)
-                .fill(0)
-                .map(() => (
-                  <img
-                    class="grayscale"
-                    src="udesa.png"
-                    alt="logo de la universidad de san andrés"
-                  />
-                ))}
-            </div>
+            <div class="grid grid-cols-3">{fillerUdesa(6)}</div>
           </div>
-          <div class="border-gray-500 col-span-3 border-l pl-4">
+          <div class="col-span-3 border-l border-gray-500 pl-4">
             <h2 class="py-2 text-xl font-semibold">Socios etec lab</h2>
-            <div class="grid grid-cols-2">
-              {Array(4)
-                .fill(0)
-                .map(() => (
-                  <img
-                    class="grayscale"
-                    src="udesa.png"
-                    alt="logo de la universidad de san andrés"
-                  />
-                ))}
-            </div>
+            <div class="grid grid-cols-2">{fillerUdesa(4)}</div>
           </div>
-          <div class="border-gray-500 col-span-3 border-l pl-4">
+          <div class="col-span-3 border-l border-gray-500 pl-4">
             <h2 class="py-2 text-xl font-semibold">Donantes</h2>
-            <div class="grid grid-cols-2">
-              {Array(4)
-                .fill(0)
-                .map(() => (
-                  <img
-                    class="grayscale"
-                    src="udesa.png"
-                    alt="logo de la universidad de san andrés"
-                  />
-                ))}
-            </div>
+            <div class="grid grid-cols-2">{fillerUdesa(4)}</div>
           </div>
         </section>
         <section class="flex flex-wrap justify-between gap-8 bg-violeta px-32 py-24">
@@ -181,6 +151,18 @@ export async function render(data) {
       </body>
     </html>
   );
+}
+
+function fillerUdesa(n) {
+  return Array(n)
+    .fill(0)
+    .map(() => (
+      <img
+        class="grayscale"
+        src="udesa.png"
+        alt="logo de la universidad de san andrés"
+      />
+    ));
 }
 
 async function tailwind() {
