@@ -54,19 +54,19 @@ export async function render(data) {
             ))}
           </div>
         </section>
-        <section class="flex min-h-screen place-content-center bg-blanco">
+        <section class="flex place-content-center bg-blanco">
           <div class="grid grid-cols-1 place-content-center xl:grid-cols-2">
             {Object.entries(data.frontpageCuadrados).map(
               ([color, { título, content }]) => {
                 // ¿por qué así en vez de `bg-${color}`? para que lo detecte tailwind.
                 const classes = {
                   celeste: "bg-celeste",
-                  amarillo: "bg-amarillo lg:order-last xl:order-none",
+                  amarillo: "bg-amarillo order-last xl:order-none",
                   naranja: "bg-naranja xl:order-last",
-                  violeta: "bg-violeta lg:order-last",
+                  violeta: "bg-violeta order-last",
                 };
                 return (
-                  <div class="grid lg:grid-cols-2">
+                  <div class="grid grid-cols-2">
                     <div
                       class={`aspect-square h-auto w-full max-w-[24rem] overflow-y-scroll ${classes[color]}`}
                     ></div>
