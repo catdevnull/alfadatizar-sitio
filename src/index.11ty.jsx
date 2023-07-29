@@ -31,6 +31,8 @@ const postcss = require("postcss")([
 export async function render(data) {
   const Estrellita = await loadSvg("src/assets/estrellita.svg");
   const Wave = await loadSvg("src/assets/wave.svg");
+  const Circulo = await loadSvg("src/assets/circulo.svg");
+  const Cruces = await loadSvg("src/assets/cruces.svg");
   // console.debug(data);
   const WobbleVioleta = await loadSvg("src/assets/wobble violeta.svg");
   const CaritasFelices = await loadSvg("src/assets/caritas felices.svg");
@@ -96,11 +98,19 @@ export async function render(data) {
                 )
               )}
             </div>
+            <div class="mt-8 flex items-center justify-between">
+              <Circulo class="h-6 h-full" />
+              <div class="relative">
+                <Cruces class="h-8" />
+                <Cruces class="absolute top-0 h-8 -scale-y-100" />
+              </div>
+              <Circulo class="h-6 h-full" />
+            </div>
           </div>
         </section>
         <section class="min-h-screen bg-blanco">
-          <div class="mx-auto max-w-3xl p-4">
-            <div class="mb-4 flex justify-center gap-4 ">
+          <div class="mx-auto max-w-5xl p-2">
+            <div class="mb-4 flex justify-center gap-4">
               <img
                 class="aspect-[1.3] w-1/2"
                 src="assets/img/imagen_naranja.webp"
@@ -110,10 +120,14 @@ export async function render(data) {
                 src="assets/img/imagen_violeta.webp"
               />
             </div>
-            <img
-              class="mx-auto aspect-[1.94] w-8/12 object-contain"
-              src="assets/img/imagen_celeste.webp"
-            />
+            <div class="flex items-center gap-4">
+              <Wave containerClass="mx-8" class="w-full" />
+              <img
+                class="mx-auto aspect-[1.94] w-8/12 object-contain"
+                src="assets/img/imagen_celeste.webp"
+              />
+              <Wave containerClass="mx-8" class="w-full" />
+            </div>
           </div>
         </section>
         <section class="flex min-h-screen place-content-center bg-blanco">
