@@ -58,12 +58,12 @@ export async function render(data) {
         </nav>
         <section class="min-h-screen">
           <div class="grid h-full grid-cols-1 md:grid-cols-2">
-            <div class="flex h-full min-h-[40vh] items-center justify-center bg-naranja p-8">
-              <LogoGrande containerClass="flex-1 max-w-lg" class="w-100" />
+            <div class="flex h-full min-h-[40vh] items-center justify-center bg-naranja p-[15%]">
+              <LogoGrande containerClass="flex-1 min-w-[25vw]" class="w-100" />
             </div>
-            <div class="flex flex-col bg-celeste px-[20%] py-[30%]">
-              <IconosLanding class="w-64 max-w-full" />
-              <h2 class="my-8 text-5xl">
+            <div class="flex flex-col bg-celeste py-[30%] pl-[20%] pr-[40%]">
+              <IconosLanding class="w-3xl min-w-[20vw]" />
+              <h2 class="my-[20%] text-[5vmin] leading-none">
                 Hackeamos
                 <br />
                 la educación
