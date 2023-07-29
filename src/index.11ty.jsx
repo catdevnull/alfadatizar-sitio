@@ -1,17 +1,43 @@
 import h from "vhtml";
+import { readFile } from "node:fs/promises";
+
+/**
+ * @param {import("node:fs").PathLike} path
+ */
+async function loadSvg(path) {
+  let f = await readFile(path, "utf-8");
+  return (props) => {
+    let s = f;
+    if (props.class) s = f.replace("<svg", `<svg class="${props.class}"`);
+    return (
+      <div
+        class={props.containerClass}
+        dangerouslySetInnerHTML={{ __html: s }}
+      ></div>
+    );
+  };
+}
 
 const postcssImport = require("postcss-import");
 const cssnano = require("cssnano");
-const { readFile } = require("fs/promises");
 const tailwindPlugin = require("tailwindcss")(require("../tailwind.config"));
 const postcss = require("postcss")([
   postcssImport(),
+  require("postcss-url")({ url: "rebase" }),
   tailwindPlugin,
   ...(process.env.ELEVENTY_ENV === "production" ? [cssnano()] : []),
 ]);
 
 export async function render(data) {
-  console.debug(data);
+  const Estrellita = await loadSvg("src/assets/estrellita.svg");
+  const Wave = await loadSvg("src/assets/wave.svg");
+  // console.debug(data);
+  const WobbleVioleta = await loadSvg("src/assets/wobble violeta.svg");
+  const CaritasFelices = await loadSvg("src/assets/caritas felices.svg");
+  const LogoInline = await loadSvg("src/assets/logo inline.svg");
+  const LogoGrande = await loadSvg("src/assets/logo grande.svg");
+  const IconosLanding = await loadSvg("src/assets/iconos landing.svg");
+  const css = await tailwind();
   //TODO: doctype
   return (
     <html lang="es">
@@ -22,36 +48,72 @@ export async function render(data) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
         />
         <title>Alfadatizando</title>
-        <style>{await tailwind()}</style>
+        <style dangerouslySetInnerHTML={{ __html: css }}></style>
       </head>
-      <body>
-        <nav class="sticky top-0 w-full bg-blanco px-16 py-4">asdf</nav>
-        <section class="h-screen">
-          <div class="flex h-full">
-            <div class="h-full flex-1 bg-naranja">asdf</div>
-            <div class="h-full flex-1 bg-celeste">asd</div>
+      <body class="flex flex-col font-sans">
+        <nav class="sticky top-0 w-full bg-blanco px-16 py-4">
+          <LogoInline class="h-12" />
+        </nav>
+        <section class="min-h-screen">
+          <div class="grid h-full grid-cols-1 md:grid-cols-2">
+            <div class="flex h-full min-h-[40vh] items-center justify-center bg-naranja p-8">
+              <LogoGrande containerClass="flex-1 max-w-lg" class="w-100" />
+            </div>
+            <div class="flex flex-col bg-celeste px-[20%] py-[30%]">
+              <IconosLanding class="w-64 max-w-full" />
+              <h2 class="my-8 text-5xl">
+                Hackeamos
+                <br />
+                la educación
+                <br />
+                digital
+                <br />
+                <strong>equitativa</strong>
+              </h2>
+              <Wave class="mt-4 w-32" />
+            </div>
           </div>
         </section>
-        <section class="min-h-screen bg-blanco p-32">
-          <div class="mb-4 flex justify-center gap-4">
-            <img class="aspect-[1.3] w-1/3" src="tmp_imagen_roja.png" />
-            <img class="aspect-[1.3] w-1/3" src="tmp_imagen_violeta.png" />
+        <section class="min-h-screen bg-blanco">
+          <WobbleVioleta />
+          <div class="mx-auto w-32 pt-8">
+            <CaritasFelices />
           </div>
-          <img
-            class="mx-auto aspect-[1.94] w-5/12 object-contain"
-            src="tmp_imagen_azul.png"
-          />
+          <div class="p-8">
+            <h2 class="flex items-center justify-center gap-4 pb-8 text-5xl font-bold leading-none">
+              <Estrellita class="h-[1em] w-[1em] shrink-0" />{" "}
+              <span class="text-center">Nuevos saberes</span>{" "}
+              <Estrellita class="h-[1em] w-[1em] shrink-0" />
+            </h2>
+            <div class="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4">
+              {data.frontpageNuevosSaberes.map(
+                ({ número, título, content }) => (
+                  <div class="flex-1 border-l border-current px-6 py-6">
+                    <h3 class="pb-4 font-mono text-2xl italic">{número}</h3>
+                    <h3 class="pb-4 text-2xl font-bold">{título}</h3>
+                    <p>{content}</p>
+                  </div>
+                )
+              )}
+            </div>
+          </div>
         </section>
-        <section class="min-h-screen bg-blanco p-8">
-          <h2 class="pb-8 text-center text-5xl font-bold">Nuevos saberes</h2>
-          <div class="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4">
-            {data.frontpageNuevosSaberes.map(({ número, título, content }) => (
-              <div class="flex-1 border-l border-current px-6 py-6">
-                <h3 class="pb-4 font-mono text-2xl italic">{número}</h3>
-                <h3 class="pb-4 text-2xl font-bold">{título}</h3>
-                <p>{content}</p>
-              </div>
-            ))}
+        <section class="min-h-screen bg-blanco">
+          <div class="mx-auto max-w-3xl p-4">
+            <div class="mb-4 flex justify-center gap-4 ">
+              <img
+                class="aspect-[1.3] w-1/2"
+                src="assets/img/imagen_naranja.webp"
+              />
+              <img
+                class="aspect-[1.3] w-1/2"
+                src="assets/img/imagen_violeta.webp"
+              />
+            </div>
+            <img
+              class="mx-auto aspect-[1.94] w-8/12 object-contain"
+              src="assets/img/imagen_celeste.webp"
+            />
           </div>
         </section>
         <section class="flex min-h-screen place-content-center bg-blanco">
@@ -68,9 +130,9 @@ export async function render(data) {
                 return (
                   <div class="grid lg:grid-cols-2">
                     <div
-                      class={`aspect-square h-auto w-full max-w-[24rem] overflow-y-scroll ${classes[color]}`}
+                      class={`aspect-square h-auto w-full max-w-[24rem] overflow-y-auto ${classes[color]}`}
                     ></div>
-                    <div class="aspect-square h-auto w-full max-w-[24rem] overflow-y-scroll p-8">
+                    <div class="aspect-square h-auto w-full max-w-[24rem] overflow-y-auto p-8">
                       <h2 class="mb-4 text-4xl">{título}</h2>
                       <p>{content}</p>
                     </div>
@@ -167,5 +229,6 @@ function fillerUdesa(n) {
 
 async function tailwind() {
   const from = "src/tailwind.css";
-  return await postcss.process(await readFile(from, "utf-8"), { from });
+  const css = await postcss.process(await readFile(from, "utf-8"), { from });
+  return css;
 }
