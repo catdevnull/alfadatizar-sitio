@@ -148,37 +148,38 @@ export async function render(data) {
             )}
           </div>
         </section>
-        <section class="grid min-h-screen grid-rows-1 items-end bg-[black] text-[white] lg:grid-cols-4">
-          <div class="col-span-3 flex h-full flex-col justify-end p-4">
-            <h2 class="mb-4 mt-16 text-3xl leading-none">
-              <strong>Caso:</strong>
-              <br />
-              Nuestra Señora del Rosario
-            </h2>
-            <iframe
-              class="aspect-video w-full"
-              src="https://www.youtube-nocookie.com/embed/NsT30qGayP4"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            ></iframe>
-          </div>
-          <div class="flex flex-col items-start gap-4 p-4">
-            <p class="text-xl leading-6">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
-              labore repellat delectus aliquam soluta dolore officia consectetur
-              ab quos quaerat, maiores earum molestiae assumenda, praesentium
-              nemo commodi repellendus iusto dolorum!
-            </p>
-            <a
-              class="border border-[white] bg-[black] p-3 text-xl font-bold uppercase leading-none"
-              target="_blank"
-              rel="noreferrer"
-              href="https://www.youtube.com/watch?v=NsT30qGayP4"
-            >
-              VER +
-            </a>
+        <section class="flex min-h-screen items-center bg-[black] text-[white]">
+          <div class="mx-auto grid max-w-7xl grid-rows-1 items-end lg:grid-cols-4">
+            <div class="col-span-3 flex h-full flex-col justify-end p-4">
+              <h2 class="mb-4 mt-16 text-3xl leading-none">
+                <strong>Caso:</strong>
+                <br />
+                Nuestra Señora del Rosario
+              </h2>
+              <iframe
+                class="aspect-video w-full"
+                src="https://www.youtube-nocookie.com/embed/NsT30qGayP4"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="flex flex-col items-start gap-4 p-4">
+              <p class="text-xl leading-6">
+                Formamos a los docentes para enseñar clases híbridas,
+                alfabetizaciones aumentadas y pensamiento computacional
+                aplicado.
+              </p>
+              <a
+                class="border border-[white] bg-[black] p-3 text-xl font-bold uppercase leading-none"
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.youtube.com/watch?v=NsT30qGayP4"
+              >
+                VER +
+              </a>
+            </div>
           </div>
         </section>
         <section class="grid w-full grid-cols-2 justify-center gap-[1px] gap-y-6 bg-amarillo px-[10%] py-12 md:grid-cols-4">
