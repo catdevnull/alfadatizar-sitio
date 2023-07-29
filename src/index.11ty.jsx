@@ -91,12 +91,12 @@ export async function render(data) {
               )}
             </div>
             <div class="mt-8 flex items-center justify-between">
-              <Circulo class="h-6 h-full" />
+              <Circulo class="h-6" />
               <div class="relative">
                 <Cruces class="h-8" />
                 <Cruces class="absolute top-0 h-8 -scale-y-100" />
               </div>
-              <Circulo class="h-6 h-full" />
+              <Circulo class="h-6" />
             </div>
           </div>
         </section>
