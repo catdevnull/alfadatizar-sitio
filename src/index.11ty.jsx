@@ -1,5 +1,6 @@
 import h from "vhtml";
 import { readFile } from "node:fs/promises";
+import { tailwind } from "./css.js";
 
 /**
  * @param {import("node:fs").PathLike} path
@@ -17,16 +18,6 @@ async function loadSvg(path) {
     );
   };
 }
-
-const postcssImport = require("postcss-import");
-const cssnano = require("cssnano");
-const tailwindPlugin = require("tailwindcss")(require("../tailwind.config"));
-const postcss = require("postcss")([
-  postcssImport(),
-  require("postcss-url")({ url: "rebase" }),
-  tailwindPlugin,
-  ...(process.env.ELEVENTY_ENV === "production" ? [cssnano()] : []),
-]);
 
 export async function render(data) {
   const Estrellita = await loadSvg("src/assets/estrellita.svg");
@@ -240,10 +231,4 @@ function fillerUdesa(n) {
         alt="logo de la universidad de san andrés"
       />
     ));
-}
-
-async function tailwind() {
-  const from = "src/tailwind.css";
-  const css = await postcss.process(await readFile(from, "utf-8"), { from });
-  return css;
 }
