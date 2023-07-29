@@ -1,0 +1,14 @@
+pipeline:
+  deploy:
+    image: gitea.nulo.in/nulo/super-image:3.18
+    when:
+      branch: master
+      event: push
+    secrets:
+      - NETLIFY_AUTH_TOKEN
+    commands:
+      - pnpm install
+      - pnpm build
+
+      - pnpm install --save-dev netlify-cli
+      - pnpm netlify deploy --site alfadatizar-staging --dir=_site --prod
