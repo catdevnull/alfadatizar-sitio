@@ -1,18 +1,18 @@
 {
   "celeste": {
-    "título": "Datos",
-    "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus, molestiae provident eum nam labore quam, magnam illo ex doloribus amet nisi praesentium aperiam aliquid. Atque nostrum iste iusto tempore quae."
+    "título": "Alfabetizaciones",
+    "content": "Pedagogía que fusiona lenguajes naturales con computacionalesimplementamos en Latinoamérica proyectos internacionales de vanguardia."
   },
   "amarillo": {
-    "título": "Datos",
-    "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus, molestiae provident eum nam labore quam, magnam illo ex doloribus amet nisi praesentium aperiam aliquid. Atque nostrum iste iusto tempore quae."
+    "título": "Docentes",
+    "content": "Capacitamos con becas a docentes motivados con la trasformación digital de la educación."
   },
   "naranja": {
-    "título": "Datos",
-    "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus, molestiae provident eum nam labore quam, magnam illo ex doloribus amet nisi praesentium aperiam aliquid. Atque nostrum iste iusto tempore quae."
+    "título": "Escuelas",
+    "content": "Digitalizamos escuelas de contextos vulnerables con un modelo sustentable basado en el liderazgo directivo."
   },
   "violeta": {
     "título": "Datos",
-    "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus, molestiae provident eum nam labore quam, magnam illo ex doloribus amet nisi praesentium aperiam aliquid. Atque nostrum iste iusto tempore quae."
+    "content": "Nos aliamos con plataformas educativas para facilitar el acceso a escuelas de contextos vulnerables al EdTech y analíticas escolares de aprendizaje."
   }
 }
