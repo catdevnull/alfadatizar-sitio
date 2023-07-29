@@ -148,7 +148,7 @@ export async function render(data) {
                     ></div>
                     <div class="aspect-square h-auto w-full max-w-[24rem] overflow-y-auto p-8">
                       <h2 class="mb-4 text-4xl font-bold">{título}</h2>
-                      <p>{content}</p>
+                      <p class="text-2xl leading-6">{content}</p>
                     </div>
                   </div>
                 );
