@@ -49,7 +49,8 @@ export async function render(data) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
         />
-        <title>Alfadatizando</title>
+        {/* TODO: SEO */}
+        <title>Alfadatizar</title>
         <style dangerouslySetInnerHTML={{ __html: css }}></style>
       </head>
       <body class="flex flex-col font-sans">
