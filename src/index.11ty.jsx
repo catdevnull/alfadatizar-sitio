@@ -147,7 +147,7 @@ export async function render(data) {
                       class={`aspect-square h-auto w-full max-w-[24rem] overflow-y-auto ${classes[color]}`}
                     ></div>
                     <div class="aspect-square h-auto w-full max-w-[24rem] overflow-y-auto p-8">
-                      <h2 class="mb-4 text-4xl">{título}</h2>
+                      <h2 class="mb-4 text-4xl font-bold">{título}</h2>
                       <p>{content}</p>
                     </div>
                   </div>
@@ -158,7 +158,7 @@ export async function render(data) {
         </section>
         <section class="grid min-h-screen grid-rows-1 items-end bg-[black] text-[white] lg:grid-cols-4">
           <div class="col-span-3 flex h-full flex-col justify-end p-4">
-            <h2 class="mb-4 mt-16 font-mono text-3xl">
+            <h2 class="mb-4 mt-16 text-3xl leading-none">
               <strong>Caso:</strong>
               <br />
               Nuestra Señora del Rosario
@@ -173,14 +173,14 @@ export async function render(data) {
             ></iframe>
           </div>
           <div class="flex flex-col items-start gap-4 p-4">
-            <p class="text-xl">
+            <p class="text-xl leading-6">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
               labore repellat delectus aliquam soluta dolore officia consectetur
               ab quos quaerat, maiores earum molestiae assumenda, praesentium
               nemo commodi repellendus iusto dolorum!
             </p>
             <a
-              class="border border-[white] bg-[black] p-3 font-mono text-xl font-bold uppercase"
+              class="border border-[white] bg-[black] p-3 text-xl font-bold uppercase leading-none"
               target="_blank"
               rel="noreferrer"
               href="https://www.youtube.com/watch?v=NsT30qGayP4"
