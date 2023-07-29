@@ -22,6 +22,7 @@ async function loadSvg(path) {
 export async function render(data) {
   const Estrellita = await loadSvg("src/assets/estrellita.svg");
   const Wave = await loadSvg("src/assets/wave.svg");
+  const VinculosPuntos = await loadSvg("src/assets/vinculos puntos.svg");
   const Circulo = await loadSvg("src/assets/circulo.svg");
   const Cruces = await loadSvg("src/assets/cruces.svg");
   // console.debug(data);
@@ -121,6 +122,7 @@ export async function render(data) {
               <Wave containerClass="mx-8" class="w-full" />
             </div>
           </div>
+          <VinculosPuntos class="m-16 mx-auto h-16" />
         </section>
         <section class="flex min-h-screen place-content-center bg-blanco">
           <div class="grid grid-cols-1 place-content-center xl:grid-cols-2">
