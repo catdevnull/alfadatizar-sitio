@@ -46,15 +46,15 @@ export async function render(data) {
         <style dangerouslySetInnerHTML={{ __html: css }}></style>
       </head>
       <body class="flex flex-col font-sans">
-        <nav class="sticky top-0 w-full bg-blanco px-16 py-4">
-          <LogoInline class="h-12" />
-        </nav>
-        <section class="min-h-screen">
-          <div class="grid h-full grid-cols-1 md:grid-cols-2">
-            <div class="flex h-full min-h-[40vh] items-center justify-center bg-naranja p-[15%]">
+        <div class="flex min-h-screen w-full flex-col items-stretch">
+          <nav class="w-full bg-blanco px-16 py-4">
+            <LogoInline class="h-12" />
+          </nav>
+          <section class="grid flex-1 grid-cols-1 md:grid-cols-2">
+            <div class="flex min-h-[40vh] items-center justify-center bg-naranja p-[15%]">
               <LogoGrande containerClass="flex-1 min-w-[25vw]" class="w-100" />
             </div>
-            <div class="flex flex-col bg-celeste py-[30%] pl-[20%] pr-[40%]">
+            <div class="flex flex-col bg-celeste py-[20%] pl-[20%] pr-[40%]">
               <IconosLanding class="w-3xl min-w-[20vw]" />
               <h2 class="my-[20%] text-[5vmin] leading-none">
                 Hackeamos
@@ -67,8 +67,8 @@ export async function render(data) {
               </h2>
               <Wave class="mt-4 w-32" />
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
         <section class="min-h-screen bg-blanco">
           <WobbleVioleta />
           <div class="mx-auto w-32 pt-8">
