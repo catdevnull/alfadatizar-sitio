@@ -86,7 +86,7 @@ export async function render(data) {
               </div>
             </section>
           </div>
-          <section class="min-h-screen bg-blanco">
+          <section class="bg-blanco">
             <WobbleVioleta />
             <div class="mx-auto w-full max-w-[12rem] pt-8">
               <CaritasFelices />
