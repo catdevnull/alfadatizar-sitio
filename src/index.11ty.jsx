@@ -110,7 +110,7 @@ export async function render(data) {
             </div>
           </div>
         </section>
-        <section class="min-h-screen bg-blanco">
+        <section class="bg-blanco">
           <div class="mx-auto max-w-5xl p-2">
             <div class="mb-4 flex justify-center gap-4">
               <img
@@ -123,12 +123,12 @@ export async function render(data) {
               />
             </div>
             <div class="flex items-center gap-4">
-              <Wave containerClass="mx-8" class="w-full" />
+              <Wave containerClass="mx-8 shrink-[2]" class="w-full" />
               <img
-                class="mx-auto aspect-[1.94] w-8/12 object-contain"
+                class="mx-auto aspect-[1.94] w-8/12 flex-auto object-contain"
                 src="assets/img/imagen_celeste.webp"
               />
-              <Wave containerClass="mx-8" class="w-full" />
+              <Wave containerClass="mx-8 shrink-[2]" class="w-full" />
             </div>
           </div>
           <VinculosPuntos class="m-16 mx-auto h-16" />
