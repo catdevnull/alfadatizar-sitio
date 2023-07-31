@@ -163,7 +163,7 @@ export async function render(data) {
                     >
                       {iconos[color]}
                     </div>
-                    <div class="aspect-square h-auto w-full max-w-[24rem] overflow-y-auto break-words p-8">
+                    <div class="h-auto w-full max-w-[24rem] overflow-y-auto break-words p-8 lg:aspect-square">
                       <h2 class="mb-4 text-4xl font-bold">{título}</h2>
                       <p class="text-2xl leading-6">{content}</p>
                     </div>
