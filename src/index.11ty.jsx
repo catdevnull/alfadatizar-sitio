@@ -237,7 +237,7 @@ export async function render(data) {
           </div>
         </section>
         <section class="flex flex-wrap items-end justify-between gap-8 bg-violeta px-[10%] py-24">
-          <LogoInline class="w-48" />
+          <LogoInline class="w-full max-w-[16rem]" />
           <a class="text-xl" href="mailto:TODO@alfadatiz.ar">
             TODO@alfadatiz.ar
           </a>
