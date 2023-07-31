@@ -216,7 +216,7 @@ export async function render(data) {
             )
           )}
         </section>
-        <section class="grid grid-cols-10 gap-8 bg-blanco px-[10%] py-8">
+        <section class="grid grid-cols-1 gap-8 bg-blanco px-[10%] py-8 md:grid-cols-10">
           <div class="col-span-4 border-l border-gray-500 pl-4">
             <h2 class="py-2 text-xl font-semibold">Socios</h2>
             <div class="grid grid-cols-3">{fillerUdesa(6)}</div>
