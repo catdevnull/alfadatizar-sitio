@@ -188,7 +188,7 @@ export async function render(data) {
             </div>
           </section>
           <section class="flex min-h-screen items-center bg-[black] text-[white]">
-            <div class="mx-auto grid max-w-7xl grid-rows-1 items-end lg:grid-cols-4">
+            <div class="m-[10%] grid w-full grid-rows-1 items-end lg:grid-cols-4">
               <div class="col-span-3 flex h-full flex-col justify-end p-4">
                 <h2 class="mb-4 mt-16 text-3xl leading-none">
                   <strong>Caso:</strong>
