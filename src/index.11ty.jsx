@@ -71,7 +71,7 @@ export async function render(data) {
                   class="w-100"
                 />
               </div>
-              <div class="flex flex-col bg-celeste px-[20%] py-[20%]">
+              <div class="flex flex-col justify-evenly bg-celeste px-[20%] py-[20%]">
                 <IconosLanding class="w-3xl min-w-[20vw] md:max-w-[50%]" />
                 <h2 class="my-[20%] text-[5vmax] leading-none md:my-[10%] md:text-[5vmin]">
                   Hackeamos
@@ -82,7 +82,7 @@ export async function render(data) {
                   <br />
                   <strong>equitativa</strong>
                 </h2>
-                <Wave class="mt-4 w-32" />
+                <Wave class="mt-4 min-w-[12%] max-w-[40%] md:max-w-[20%]" />
               </div>
             </section>
           </div>
