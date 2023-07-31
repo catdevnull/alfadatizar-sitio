@@ -53,6 +53,10 @@ export async function render(data) {
           />
           {/* TODO: SEO */}
           <title>Alfadatizar</title>
+          <meta
+            name="description"
+            content="Alfadatizar alfadatiza alfadatizando."
+          />
           <style dangerouslySetInnerHTML={{ __html: css }}></style>
         </head>
         <body class="flex flex-col font-sans">
