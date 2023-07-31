@@ -139,7 +139,7 @@ export async function render(data) {
           </div>
           <VinculosPuntos class="m-16 mx-auto h-16" />
         </section>
-        <section class="flex min-h-screen place-content-center bg-blanco">
+        <section class="flex place-content-center bg-blanco">
           <div class="grid grid-cols-1 place-content-center xl:grid-cols-2">
             {Object.entries(data.frontpageCuadrados).map(
               ([color, { título, content }]) => {
