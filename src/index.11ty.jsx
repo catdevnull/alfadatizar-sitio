@@ -83,7 +83,7 @@ export async function render(data) {
           <div class="mx-auto w-32 pt-8">
             <CaritasFelices />
           </div>
-          <div class="p-8">
+          <div class="p-[10%]">
             <h2 class="flex items-center justify-center gap-4 pb-8 text-5xl font-bold leading-none">
               <Estrellita class="h-[1em] w-[1em] shrink-0" />{" "}
               <span class="text-center">Nuevos saberes</span>{" "}
