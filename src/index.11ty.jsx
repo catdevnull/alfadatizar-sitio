@@ -93,7 +93,7 @@ export async function render(data) {
               {data.frontpageNuevosSaberes.map(
                 ({ número, título, content }) => (
                   <div class="flex-1 border-l border-current px-6 py-6">
-                    <h3 class="pb-4 font-mono text-2xl italic">{número}</h3>
+                    <h3 class="pb-4 text-2xl italic">{número}</h3>
                     <h3 class="pb-4 text-2xl font-bold">{título}</h3>
                     <p>{content}</p>
                   </div>
