@@ -125,11 +125,13 @@ export async function render(data) {
                   class="aspect-[1.3] w-1/2"
                   src="assets/img/imagen_naranja.webp"
                   alt="un grupo de personas atendiendo una capacitación, sentadas alrededor de una mesa, con tablets en sus manos"
+                  loading="lazy"
                 />
                 <img
                   class="aspect-[1.3] w-1/2"
                   src="assets/img/imagen_violeta.webp"
                   alt="un robot siendo manipulado por manos de niñxs, usando una laptop"
+                  loading="lazy"
                 />
               </div>
               <div class="flex items-center gap-4">
@@ -141,6 +143,7 @@ export async function render(data) {
                   class="mx-auto aspect-[1.94] w-8/12 flex-auto object-contain"
                   src="assets/img/imagen_celeste.webp"
                   alt="dos mujeres riendose mirando una tablet"
+                  loading="lazy"
                 />
                 <Wave
                   containerClass="mx-8 shrink-[2] max-w-[10vw]"
@@ -195,6 +198,7 @@ export async function render(data) {
                 <iframe
                   class="aspect-video w-full"
                   src="https://www.youtube-nocookie.com/embed/NsT30qGayP4"
+                  loading="lazy"
                   title="YouTube video player"
                   frameborder="0"
                   allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
