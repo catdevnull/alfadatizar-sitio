@@ -32,6 +32,15 @@ export async function render(data) {
   const LogoGrande = await loadSvg("src/assets/logo grande.svg");
   const IconosLanding = await loadSvg("src/assets/iconos landing.svg");
   const css = await tailwind();
+
+  const CuadradoAlfabetizaciones = await loadSvg(
+    "src/assets/cuadrados/alfabetizaciones.svg"
+  );
+  const CuadradoCaraDeLapiz = await loadSvg(
+    "src/assets/cuadrados/cara de lapiz.svg"
+  );
+  const CuadradoDatos = await loadSvg("src/assets/cuadrados/datos.svg");
+  const CuadradoEscuelas = await loadSvg("src/assets/cuadrados/escuelas.svg");
   //TODO: doctype
   return (
     <html lang="es">
@@ -135,12 +144,20 @@ export async function render(data) {
                   naranja: "bg-naranja xl:order-last",
                   violeta: "bg-violeta lg:order-last",
                 };
+                const iconos = {
+                  celeste: <CuadradoAlfabetizaciones class="w-32" />,
+                  amarillo: <CuadradoCaraDeLapiz class="w-32" />,
+                  naranja: <CuadradoDatos class="w-32" />,
+                  violeta: <CuadradoEscuelas class="w-32" />,
+                };
                 return (
                   <div class="grid lg:grid-cols-2">
                     <div
-                      class={`aspect-square h-auto w-full max-w-[24rem] overflow-y-auto ${classes[color]}`}
-                    ></div>
-                    <div class="aspect-square h-auto w-full max-w-[24rem] overflow-y-auto p-8">
+                      class={`aspect-square h-auto w-full max-w-[24rem] ${classes[color]} flex items-center justify-center`}
+                    >
+                      {iconos[color]}
+                    </div>
+                    <div class="aspect-square h-auto w-full max-w-[24rem] overflow-y-auto break-words p-8">
                       <h2 class="mb-4 text-4xl font-bold">{título}</h2>
                       <p class="text-2xl leading-6">{content}</p>
                     </div>
