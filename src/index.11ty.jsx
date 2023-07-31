@@ -122,13 +122,13 @@ export async function render(data) {
             <div class="mx-auto max-w-5xl p-2">
               <div class="mb-4 flex justify-center gap-4">
                 <img
-                  class="aspect-[1.3] w-1/2"
+                  class="aspect-[1.3] w-1/2 object-contain"
                   src="assets/img/imagen_naranja.webp"
                   alt="un grupo de personas atendiendo una capacitación, sentadas alrededor de una mesa, con tablets en sus manos"
                   loading="lazy"
                 />
                 <img
-                  class="aspect-[1.3] w-1/2"
+                  class="aspect-[1.3] w-1/2 object-contain"
                   src="assets/img/imagen_violeta.webp"
                   alt="un robot siendo manipulado por manos de niñxs, usando una laptop"
                   loading="lazy"
