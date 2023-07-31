@@ -236,7 +236,7 @@ export async function render(data) {
             <div class="grid grid-cols-2">{fillerUdesa(4)}</div>
           </div>
         </section>
-        <section class="flex flex-wrap items-end justify-between gap-8 bg-violeta px-32 py-24">
+        <section class="flex flex-wrap items-end justify-between gap-8 bg-violeta px-[10%] py-24">
           <LogoInline class="w-48" />
           <a class="text-xl" href="mailto:TODO@alfadatiz.ar">
             TODO@alfadatiz.ar
