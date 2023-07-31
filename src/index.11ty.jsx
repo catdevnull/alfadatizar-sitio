@@ -120,10 +120,12 @@ export async function render(data) {
                 <img
                   class="aspect-[1.3] w-1/2"
                   src="assets/img/imagen_naranja.webp"
+                  alt="un grupo de personas atendiendo una capacitación, sentadas alrededor de una mesa, con tablets en sus manos"
                 />
                 <img
                   class="aspect-[1.3] w-1/2"
                   src="assets/img/imagen_violeta.webp"
+                  alt="un robot siendo manipulado por manos de niñxs, usando una laptop"
                 />
               </div>
               <div class="flex items-center gap-4">
@@ -134,6 +136,7 @@ export async function render(data) {
                 <img
                   class="mx-auto aspect-[1.94] w-8/12 flex-auto object-contain"
                   src="assets/img/imagen_celeste.webp"
+                  alt="dos mujeres riendose mirando una tablet"
                 />
                 <Wave
                   containerClass="mx-8 shrink-[2] max-w-[10vw]"
