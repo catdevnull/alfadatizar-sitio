@@ -88,7 +88,7 @@ export async function render(data) {
           </div>
           <section class="bg-blanco">
             <WobbleVioleta />
-            <div class="mx-auto w-full max-w-[12rem] pt-8">
+            <div class="mx-auto w-full max-w-[12rem] pt-16">
               <CaritasFelices />
             </div>
             <div class="p-[10%] py-16">
