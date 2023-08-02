@@ -240,15 +240,15 @@ export async function render(data) {
           <section class="grid grid-cols-1 gap-8 bg-blanco px-[10%] py-8 md:grid-cols-10">
             <div class="col-span-4 border-l border-gray-500 pl-4">
               <h2 class="py-2 text-xl font-semibold">Socios</h2>
-              <div class="grid grid-cols-3">{fillerUdesa(6)}</div>
+              <div class="grid grid-cols-3 mr-16">{fillerUdesa(6)}</div>
             </div>
             <div class="col-span-3 border-l border-gray-500 pl-4">
               <h2 class="py-2 text-xl font-semibold">Socios etec lab</h2>
-              <div class="grid grid-cols-2">{fillerUdesa(4)}</div>
+              <div class="grid grid-cols-2 mr-16">{fillerUdesa(4)}</div>
             </div>
             <div class="col-span-3 border-l border-gray-500 pl-4">
               <h2 class="py-2 text-xl font-semibold">Donantes</h2>
-              <div class="grid grid-cols-2">{fillerUdesa(4)}</div>
+              <div class="grid grid-cols-2 mr-16">{fillerUdesa(4)}</div>
             </div>
           </section>
           <section class="flex flex-wrap items-end justify-between gap-8 bg-violeta px-[10%] py-24">
