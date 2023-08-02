@@ -108,7 +108,7 @@ export async function render(data) {
                   )
                 )}
               </div>
-              <div class="mt-8 flex items-center justify-between">
+              <div class="mt-16 flex items-center justify-between">
                 <Circulo class="h-6" />
                 <div class="relative">
                   <Cruces class="h-8" />
