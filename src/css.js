@@ -1,13 +1,17 @@
 import { readFile } from "node:fs/promises";
 
-const postcssImport = require("postcss-import");
-const cssnano = require("cssnano");
-const tailwindPlugin = require("tailwindcss")(require("../tailwind.config"));
-const postcss = require("postcss")([
+import postcssS from "postcss";
+import postcssImport from "postcss-import";
+import postcssUrl from "postcss-url";
+import cssnano from "cssnano";
+import tailwindcss from "tailwindcss";
+import tailwindConfig from "../tailwind.config.js";
+const tailwindPlugin = tailwindcss(tailwindConfig);
+const postcss = postcssS([
   postcssImport(),
-  require("postcss-url")({ url: "rebase" }),
+  postcssUrl({ url: "rebase" }),
   tailwindPlugin,
-  ...(process.env.ELEVENTY_ENV === "production" ? [cssnano()] : []),
+  ...(process.env.PROD ? [cssnano()] : []),
 ]);
 
 export async function tailwind() {
