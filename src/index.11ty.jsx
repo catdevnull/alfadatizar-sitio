@@ -10,12 +10,7 @@ async function loadSvg(path) {
   return (props) => {
     let s = f;
     if (props.class) s = f.replace("<svg", `<svg class="${props.class}"`);
-    return (
-      <div
-        class={props.containerClass}
-        dangerouslySetInnerHTML={{ __html: s }}
-      ></div>
-    );
+    return <div class={props.containerClass} dangerouslySetInnerHTML={{ __html: s }}></div>;
   };
 }
 
@@ -33,12 +28,8 @@ export async function render(data) {
   const IconosLanding = await loadSvg("src/assets/iconos landing.svg");
   const css = await tailwind();
 
-  const CuadradoAlfabetizaciones = await loadSvg(
-    "src/assets/cuadrados/alfabetizaciones.svg"
-  );
-  const CuadradoCaraDeLapiz = await loadSvg(
-    "src/assets/cuadrados/cara de lapiz.svg"
-  );
+  const CuadradoAlfabetizaciones = await loadSvg("src/assets/cuadrados/alfabetizaciones.svg");
+  const CuadradoCaraDeLapiz = await loadSvg("src/assets/cuadrados/cara de lapiz.svg");
   const CuadradoDatos = await loadSvg("src/assets/cuadrados/datos.svg");
   const CuadradoEscuelas = await loadSvg("src/assets/cuadrados/escuelas.svg");
 
@@ -55,10 +46,7 @@ export async function render(data) {
       <html lang="es">
         <head>
           <meta charset="utf-8" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
-          />
+          <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
 
           <title>{meta.title}</title>
           <meta name="description" content={meta.description} />
@@ -68,19 +56,13 @@ export async function render(data) {
           <meta property="og:url" content={meta.url} />
           <meta property="og:title" content={meta.title} />
           <meta property="og:description" content={meta.description} />
-          <meta
-            property="og:image"
-            content={`${meta.url}assets/img/screenshot.png`}
-          />
+          <meta property="og:image" content={`${meta.url}assets/img/screenshot.png`} />
 
           <meta property="twitter:card" content="summary_large_image" />
           <meta property="twitter:url" content={meta.url} />
           <meta property="twitter:title" content={meta.title} />
           <meta property="twitter:description" content={meta.description} />
-          <meta
-            property="twitter:image"
-            content={`${meta.url}assets/img/screenshot.png`}
-          />
+          <meta property="twitter:image" content={`${meta.url}assets/img/screenshot.png`} />
 
           <style dangerouslySetInnerHTML={{ __html: css }}></style>
         </head>
@@ -91,10 +73,7 @@ export async function render(data) {
             </nav>
             <section class="grid flex-1 grid-cols-1 md:grid-cols-2">
               <div class="flex min-h-[40vh] items-center justify-center bg-naranja p-[15%]">
-                <LogoGrande
-                  containerClass="flex-1 min-w-[25vw]"
-                  class="w-100"
-                />
+                <LogoGrande containerClass="flex-1 min-w-[25vw]" class="w-100" />
               </div>
               <div class="flex flex-col justify-evenly bg-celeste px-[20%] py-[20%]">
                 <IconosLanding class="w-3xl min-w-[20vw] md:max-w-[50%]" />
@@ -118,20 +97,17 @@ export async function render(data) {
             </div>
             <div class="p-[10%] py-16">
               <h2 class="flex items-center justify-center gap-4 pb-8 text-5xl font-bold leading-none">
-                <Estrellita class="h-[1em] w-[1em] shrink-0" />{" "}
-                <span class="text-center">Nuevos saberes</span>{" "}
+                <Estrellita class="h-[1em] w-[1em] shrink-0" /> <span class="text-center">Nuevos saberes</span>{" "}
                 <Estrellita class="h-[1em] w-[1em] shrink-0" />
               </h2>
               <div class="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4">
-                {data.frontpageNuevosSaberes.map(
-                  ({ número, título, content }) => (
-                    <div class="flex-1 border-l border-current px-6 py-6">
-                      <h3 class="pb-4 text-2xl italic">{número}</h3>
-                      <h3 class="pb-4 text-2xl font-bold">{título}</h3>
-                      <p>{content}</p>
-                    </div>
-                  )
-                )}
+                {data.frontpageNuevosSaberes.map(({ número, título, content }) => (
+                  <div class="flex-1 border-l border-current px-6 py-6">
+                    <h3 class="pb-4 text-2xl italic">{número}</h3>
+                    <h3 class="pb-4 text-2xl font-bold">{título}</h3>
+                    <p>{content}</p>
+                  </div>
+                ))}
               </div>
               <div class="mt-16 flex items-center justify-between">
                 <Circulo class="h-6" />
@@ -160,56 +136,48 @@ export async function render(data) {
                 />
               </div>
               <div class="flex items-center gap-4">
-                <Wave
-                  containerClass="mx-8 shrink-[2] max-w-[10vw]"
-                  class="w-full"
-                />
+                <Wave containerClass="mx-8 shrink-[2] max-w-[10vw]" class="w-full" />
                 <img
                   class="mx-auto aspect-[1.94] w-8/12 flex-auto object-contain"
                   src="assets/img/imagen_celeste.webp"
                   alt="dos mujeres riendose mirando una tablet"
                   loading="lazy"
                 />
-                <Wave
-                  containerClass="mx-8 shrink-[2] max-w-[10vw]"
-                  class="w-full"
-                />
+                <Wave containerClass="mx-8 shrink-[2] max-w-[10vw]" class="w-full" />
               </div>
             </div>
             <VinculosPuntos class="m-16 mx-auto h-16" />
           </section>
           <section class="flex place-content-center bg-blanco">
             <div class="grid grid-cols-1 place-content-center xl:grid-cols-2">
-              {Object.entries(data.frontpageCuadrados).map(
-                ([color, { título, content }]) => {
-                  // ¿por qué así en vez de `bg-${color}`? para que lo detecte tailwind.
-                  const classes = {
-                    celeste: "bg-celeste",
-                    amarillo: "bg-amarillo lg:order-last xl:order-none",
-                    naranja: "bg-naranja xl:order-last",
-                    violeta: "bg-violeta lg:order-last",
-                  };
-                  const iconos = {
-                    celeste: <CuadradoAlfabetizaciones class="w-32" />,
-                    amarillo: <CuadradoCaraDeLapiz class="w-32" />,
-                    naranja: <CuadradoDatos class="w-32" />,
-                    violeta: <CuadradoEscuelas class="w-32" />,
-                  };
-                  return (
-                    <div class="grid lg:grid-cols-2">
-                      <div
-                        class={`aspect-square h-auto w-full max-w-[24rem] ${classes[color]} flex items-center justify-center`}
-                      >
-                        {iconos[color]}
-                      </div>
-                      <div class="h-auto w-full max-w-[24rem] overflow-y-auto break-words p-8 lg:aspect-square">
-                        <h2 class="mb-4 text-4xl font-bold">{título}</h2>
-                        <p class="text-2xl leading-6">{content}</p>
-                      </div>
+              {Object.entries(data.frontpageCuadrados).map(([color, { título, content }]) => {
+                // ¿por qué así en vez de `bg-${color}`? para que lo detecte tailwind.
+                const classes = {
+                  celeste: "bg-celeste",
+                  amarillo: "bg-amarillo lg:order-last xl:order-none",
+                  naranja: "bg-naranja xl:order-last",
+                  violeta: "bg-violeta lg:order-last",
+                };
+                const iconos = {
+                  celeste: <CuadradoAlfabetizaciones class="w-32" />,
+                  amarillo: <CuadradoCaraDeLapiz class="w-32" />,
+                  naranja: <CuadradoDatos class="w-32" />,
+                  violeta: <CuadradoEscuelas class="w-32" />,
+                };
+                return (
+                  <div class="grid lg:grid-cols-2">
+                    <div
+                      class={`aspect-square h-auto w-full max-w-[24rem] ${classes[color]} flex items-center justify-center`}
+                    >
+                      {iconos[color]}
                     </div>
-                  );
-                }
-              )}
+                    <div class="h-auto w-full max-w-[24rem] overflow-y-auto break-words p-8 lg:aspect-square">
+                      <h2 class="mb-4 text-4xl font-bold">{título}</h2>
+                      <p class="text-2xl leading-6">{content}</p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </section>
           <section class="flex min-h-screen items-center bg-[black] text-[white]">
@@ -232,9 +200,8 @@ export async function render(data) {
               </div>
               <div class="flex flex-col items-start gap-4 p-4">
                 <p class="text-xl leading-6">
-                  Formamos a los docentes para enseñar clases híbridas,
-                  alfabetizaciones aumentadas y pensamiento computacional
-                  aplicado.
+                  Formamos a los docentes para enseñar clases híbridas, alfabetizaciones aumentadas y pensamiento
+                  computacional aplicado.
                 </p>
                 <a
                   class="border border-[white] bg-[black] p-3 text-xl font-bold uppercase leading-none"
@@ -248,25 +215,18 @@ export async function render(data) {
             </div>
           </section>
           <section class="grid w-full grid-cols-2 justify-center gap-[1px] gap-y-6 bg-amarillo px-[10%] py-12 md:grid-cols-4">
-            {data.frontpageFooterButtons.map(
-              ({ content, buttonText, buttonUrl }) => (
-                <div class="flex flex-col justify-end">
-                  <h2 class="px-3 pb-4 text-xl">{content}</h2>
-                  <a
-                    href={buttonUrl}
-                    class="px-4 py-3 font-bold outline outline-1 outline-[black]"
-                  >
-                    {buttonText}
-                  </a>
-                </div>
-              )
-            )}
+            {data.frontpageFooterButtons.map(({ content, buttonText, buttonUrl }) => (
+              <div class="flex flex-col justify-end">
+                <h2 class="px-3 pb-4 text-xl">{content}</h2>
+                <a href={buttonUrl} class="px-4 py-3 font-bold outline outline-1 outline-[black]">
+                  {buttonText}
+                </a>
+              </div>
+            ))}
           </section>
           <section class="grid grid-cols-1 gap-8 bg-blanco px-[10%] py-8 md:grid-cols-10">
             <div class="flex flex-col border-l border-gray-500 pl-4 md:col-span-4">
-              <h2 class="py-2 text-xl font-semibold">
-                Alianzas socioeducativas
-              </h2>
+              <h2 class="py-2 text-xl font-semibold">Alianzas socioeducativas</h2>
               <div class="grid flex-1 grid-cols-2 place-content-evenly items-center gap-4">
                 <a href="https://fdcsa.org.ar">
                   <img
@@ -276,26 +236,11 @@ export async function render(data) {
                   />
                 </a>
                 <a href="https://udesa.edu.ar">
-                  <img
-                    loading="lazy"
-                    src="assets/img/alianzas/udesa4.webp"
-                    alt="Universidad de San Andrés"
-                  />
+                  <img loading="lazy" src="assets/img/alianzas/udesa4.webp" alt="Universidad de San Andrés" />
                 </a>
-                <a
-                  href="https://www.feyalegria.org/argentina/"
-                  class="grid grid-cols-2 gap-2"
-                >
-                  <img
-                    loading="lazy"
-                    src="assets/img/alianzas/jesuitas.png"
-                    alt="jesuitas"
-                  />
-                  <img
-                    loading="lazy"
-                    src="assets/img/alianzas/fe y alegria.png"
-                    alt="fe y alegria"
-                  />
+                <a href="https://www.feyalegria.org/argentina/" class="grid grid-cols-2 gap-2">
+                  <img loading="lazy" src="assets/img/alianzas/jesuitas.png" alt="jesuitas" />
+                  <img loading="lazy" src="assets/img/alianzas/fe y alegria.png" alt="fe y alegria" />
                 </a>
                 <a href="https://www.obispado-si.org.ar/">
                   <img
@@ -310,32 +255,16 @@ export async function render(data) {
               <h2 class="py-2 text-xl font-semibold">Alianzas EdTech</h2>
               <div class="grid flex-1 grid-cols-2 place-content-evenly items-center gap-4">
                 <a href="https://fidu.la/#gestion-academica">
-                  <img
-                    loading="lazy"
-                    src="assets/img/alianzas/fidu.png"
-                    alt="fidu"
-                  />
+                  <img loading="lazy" src="assets/img/alianzas/fidu.png" alt="fidu" />
                 </a>
                 <a href="https://edpuzzle.com/">
-                  <img
-                    loading="lazy"
-                    src="assets/img/alianzas/edpuzzle.png"
-                    alt="edpuzzle"
-                  />
+                  <img loading="lazy" src="assets/img/alianzas/edpuzzle.png" alt="edpuzzle" />
                 </a>
                 <a href="https://tintafresca.com.ar/schoology/">
-                  <img
-                    loading="lazy"
-                    src="assets/img/alianzas/schoology-t.webp"
-                    alt="schoology"
-                  />
+                  <img loading="lazy" src="assets/img/alianzas/schoology-t.webp" alt="schoology" />
                 </a>
                 <a href="https://legamasterlatam.com">
-                  <img
-                    loading="lazy"
-                    src="assets/img/alianzas/legamaster.png"
-                    alt="legamaster"
-                  />
+                  <img loading="lazy" src="assets/img/alianzas/legamaster.png" alt="legamaster" />
                 </a>
               </div>
             </div>
@@ -344,32 +273,16 @@ export async function render(data) {
               <h2 class="py-2 text-xl font-semibold">Nos acompañan</h2>
               <div class="grid flex-1 grid-cols-2 place-content-evenly items-center gap-4">
                 <a href="https://finneg.com/ar/">
-                  <img
-                    loading="lazy"
-                    src="assets/img/alianzas/finnegans.png"
-                    alt="Finnegans"
-                  />
+                  <img loading="lazy" src="assets/img/alianzas/finnegans.png" alt="Finnegans" />
                 </a>
                 <a href="https://www.globant.com/es">
-                  <img
-                    loading="lazy"
-                    src="assets/img/alianzas/globant.png"
-                    alt="Globant"
-                  />
+                  <img loading="lazy" src="assets/img/alianzas/globant.png" alt="Globant" />
                 </a>
                 <a href="https://www.mercadolibre.com.ar/">
-                  <img
-                    loading="lazy"
-                    src="assets/img/alianzas/mercadolibre2.webp"
-                    alt="MercadoLibre"
-                  />
+                  <img loading="lazy" src="assets/img/alianzas/mercadolibre2.webp" alt="MercadoLibre" />
                 </a>
                 <a href="https://www.agd.com.ar/">
-                  <img
-                    loading="lazy"
-                    src="assets/img/alianzas/agd.png"
-                    alt="AGD"
-                  />
+                  <img loading="lazy" src="assets/img/alianzas/agd.png" alt="AGD" />
                 </a>
               </div>
             </div>
