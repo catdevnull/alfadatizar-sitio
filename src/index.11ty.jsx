@@ -41,6 +41,14 @@ export async function render(data) {
   );
   const CuadradoDatos = await loadSvg("src/assets/cuadrados/datos.svg");
   const CuadradoEscuelas = await loadSvg("src/assets/cuadrados/escuelas.svg");
+
+  const meta = {
+    title: "Alfadatizar",
+    url: "https://staging.alfadatiz.ar/",
+    description:
+      "Digitalizamos escuelas de contextos vulnerables con un modelo sustentable basado en el liderazgo directivo.",
+  };
+
   return (
     "<!doctype html>" +
     (
@@ -51,33 +59,21 @@ export async function render(data) {
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
           />
-          {/* TODO: SEO */}
-          <title>Alfadatizar</title>
-          <meta
-            name="description"
-            content="Alfadatizar alfadatiza alfadatizando."
-          />
+
+          <title>{meta.title}</title>
+          <meta name="description" content={meta.description} />
           <link rel="icon" href="assets/img/favicon.svg" />
 
           <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://staging.alfadatiz.ar/" />
-          <meta property="og:title" content="Alfadatizar" />
-          <meta
-            property="og:description"
-            content="Alfadatizar alfadatiza alfadatizando."
-          />
+          <meta property="og:url" content={meta.url} />
+          <meta property="og:title" content={meta.title} />
+          <meta property="og:description" content={meta.description} />
           <meta property="og:image" content="assets/img/screenshot.png" />
 
           <meta property="twitter:card" content="summary_large_image" />
-          <meta
-            property="twitter:url"
-            content="https://staging.alfadatiz.ar/"
-          />
-          <meta property="twitter:title" content="Alfadatizar" />
-          <meta
-            property="twitter:description"
-            content="Alfadatizar alfadatiza alfadatizando."
-          />
+          <meta property="twitter:url" content={meta.url} />
+          <meta property="twitter:title" content={meta.title} />
+          <meta property="twitter:description" content={meta.description} />
           <meta property="twitter:image" content="assets/img/screenshot.png" />
 
           <style dangerouslySetInnerHTML={{ __html: css }}></style>
