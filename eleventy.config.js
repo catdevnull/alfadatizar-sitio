@@ -12,7 +12,7 @@ module.exports = function (eleventyConfig) {
     const from = "src/tailwind.css";
     return await postcss.process(await readFile(from, "utf-8"), { from });
   });
-  eleventyConfig.addPassthroughCopy("src/**.png");
+  eleventyConfig.addPassthroughCopy("src/**/*.png");
   eleventyConfig.addPassthroughCopy("src/**/*.webp");
   eleventyConfig.addPassthroughCopy("src/**/*.woff");
   eleventyConfig.addPassthroughCopy("src/**/*.woff2");

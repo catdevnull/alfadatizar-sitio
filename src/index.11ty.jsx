@@ -238,17 +238,115 @@ export async function render(data) {
             )}
           </section>
           <section class="grid grid-cols-1 gap-8 bg-blanco px-[10%] py-8 md:grid-cols-10">
-            <div class="col-span-4 border-l border-gray-500 pl-4">
-              <h2 class="py-2 text-xl font-semibold">Socios</h2>
-              <div class="grid grid-cols-3 mr-16">{fillerUdesa(6)}</div>
+            <div class="flex flex-col border-l border-gray-500 pl-4 md:col-span-4">
+              <h2 class="py-2 text-xl font-semibold">
+                Alianzas socioeducativas
+              </h2>
+              <div class="grid flex-1 grid-cols-2 place-content-evenly items-center gap-4">
+                <a href="https://fdcsa.org.ar">
+                  <img
+                    loading="lazy"
+                    src="assets/img/alianzas/fdcsa.png"
+                    alt="Fundación por el desarrollo comunitario San Andrés"
+                  />
+                </a>
+                <a href="https://udesa.edu.ar">
+                  <img
+                    loading="lazy"
+                    src="assets/img/alianzas/udesa4.webp"
+                    alt="Universidad de San Andrés"
+                  />
+                </a>
+                <a
+                  href="https://www.feyalegria.org/argentina/"
+                  class="grid grid-cols-2 gap-2"
+                >
+                  <img
+                    loading="lazy"
+                    src="assets/img/alianzas/jesuitas.png"
+                    alt="jesuitas"
+                  />
+                  <img
+                    loading="lazy"
+                    src="assets/img/alianzas/fe y alegria.png"
+                    alt="fe y alegria"
+                  />
+                </a>
+                <a href="https://www.obispado-si.org.ar/">
+                  <img
+                    loading="lazy"
+                    src="assets/img/alianzas/diocesis de san isidro.png"
+                    alt="diocesis de san isidro"
+                  />
+                </a>
+              </div>
             </div>
-            <div class="col-span-3 border-l border-gray-500 pl-4">
-              <h2 class="py-2 text-xl font-semibold">Socios etec lab</h2>
-              <div class="grid grid-cols-2 mr-16">{fillerUdesa(4)}</div>
+            <div class="flex flex-col border-l border-gray-500 pl-4 md:col-span-3">
+              <h2 class="py-2 text-xl font-semibold">Alianzas EdTech</h2>
+              <div class="grid flex-1 grid-cols-2 place-content-evenly items-center gap-4">
+                <a href="https://fidu.la/#gestion-academica">
+                  <img
+                    loading="lazy"
+                    src="assets/img/alianzas/fidu.png"
+                    alt="fidu"
+                  />
+                </a>
+                <a href="https://edpuzzle.com/">
+                  <img
+                    loading="lazy"
+                    src="assets/img/alianzas/edpuzzle.png"
+                    alt="edpuzzle"
+                  />
+                </a>
+                <a href="https://tintafresca.com.ar/schoology/">
+                  <img
+                    loading="lazy"
+                    src="assets/img/alianzas/schoology-t.webp"
+                    alt="schoology"
+                  />
+                </a>
+                <a href="https://legamasterlatam.com">
+                  <img
+                    loading="lazy"
+                    src="assets/img/alianzas/legamaster.png"
+                    alt="legamaster"
+                  />
+                </a>
+              </div>
             </div>
-            <div class="col-span-3 border-l border-gray-500 pl-4">
-              <h2 class="py-2 text-xl font-semibold">Donantes</h2>
-              <div class="grid grid-cols-2 mr-16">{fillerUdesa(4)}</div>
+            <div class="flex flex-col gap-3 border-l border-gray-500 pl-4 md:col-span-3">
+              {/* TODO: revisar */}
+              <h2 class="py-2 text-xl font-semibold">Nos acompañan</h2>
+              <div class="grid flex-1 grid-cols-2 place-content-evenly items-center gap-4">
+                <a href="https://finneg.com/ar/">
+                  <img
+                    loading="lazy"
+                    src="assets/img/alianzas/finnegans.png"
+                    alt="Finnegans"
+                  />
+                </a>
+                <a href="https://www.globant.com/es">
+                  <img
+                    loading="lazy"
+                    src="assets/img/alianzas/globant.png"
+                    alt="Globant"
+                  />
+                </a>
+                <a href="https://www.mercadolibre.com.ar/">
+                  <img
+                    loading="lazy"
+                    src="assets/img/alianzas/mercadolibre2.webp"
+                    alt="MercadoLibre"
+                  />
+                </a>
+                <a href="https://www.agd.com.ar/">
+                  <img
+                    loading="lazy"
+                    src="assets/img/alianzas/agd.png"
+                    alt="AGD"
+                  />
+                </a>
+              </div>
             </div>
           </section>
           <section class="flex flex-wrap items-end justify-between gap-8 bg-violeta px-[10%] py-24">
@@ -261,16 +359,4 @@ export async function render(data) {
       </html>
     )
   );
-}
-
-function fillerUdesa(n) {
-  return Array(n)
-    .fill(0)
-    .map(() => (
-      <img
-        class="grayscale"
-        src="udesa.png"
-        alt="logo de la universidad de san andrés"
-      />
-    ));
 }
