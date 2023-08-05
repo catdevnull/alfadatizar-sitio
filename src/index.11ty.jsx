@@ -62,19 +62,25 @@ export async function render(data) {
 
           <title>{meta.title}</title>
           <meta name="description" content={meta.description} />
-          <link rel="icon" href="assets/img/favicon.svg" />
+          <link rel="icon" href={`${meta.url}assets/img/favicon.svg`} />
 
           <meta property="og:type" content="website" />
           <meta property="og:url" content={meta.url} />
           <meta property="og:title" content={meta.title} />
           <meta property="og:description" content={meta.description} />
-          <meta property="og:image" content="assets/img/screenshot.png" />
+          <meta
+            property="og:image"
+            content={`${meta.url}assets/img/screenshot.png`}
+          />
 
           <meta property="twitter:card" content="summary_large_image" />
           <meta property="twitter:url" content={meta.url} />
           <meta property="twitter:title" content={meta.title} />
           <meta property="twitter:description" content={meta.description} />
-          <meta property="twitter:image" content="assets/img/screenshot.png" />
+          <meta
+            property="twitter:image"
+            content={`${meta.url}assets/img/screenshot.png`}
+          />
 
           <style dangerouslySetInnerHTML={{ __html: css }}></style>
         </head>
