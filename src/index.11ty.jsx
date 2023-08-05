@@ -57,6 +57,29 @@ export async function render(data) {
             name="description"
             content="Alfadatizar alfadatiza alfadatizando."
           />
+          <link rel="icon" href="assets/img/favicon.svg" />
+
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://staging.alfadatiz.ar/" />
+          <meta property="og:title" content="Alfadatizar" />
+          <meta
+            property="og:description"
+            content="Alfadatizar alfadatiza alfadatizando."
+          />
+          <meta property="og:image" content="assets/img/screenshot.png" />
+
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta
+            property="twitter:url"
+            content="https://staging.alfadatiz.ar/"
+          />
+          <meta property="twitter:title" content="Alfadatizar" />
+          <meta
+            property="twitter:description"
+            content="Alfadatizar alfadatiza alfadatizando."
+          />
+          <meta property="twitter:image" content="assets/img/screenshot.png" />
+
           <style dangerouslySetInnerHTML={{ __html: css }}></style>
         </head>
         <body class="flex flex-col font-sans">

@@ -16,6 +16,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/**/*.webp");
   eleventyConfig.addPassthroughCopy("src/**/*.woff");
   eleventyConfig.addPassthroughCopy("src/**/*.woff2");
+  eleventyConfig.addPassthroughCopy("src/assets/img/**/*.svg");
 
   eleventyConfig.addExtension(["11ty.jsx", "11ty.ts", "11ty.tsx"], {
     key: "11ty.js",
