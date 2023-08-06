@@ -214,14 +214,16 @@ export async function render(data) {
               </div>
             </div>
           </section>
-          <section class="grid w-full grid-cols-2 justify-center gap-[1px] gap-y-6 bg-amarillo px-[10%] py-12 md:grid-cols-4">
+          <section class="-mb-6 grid w-full grid-flow-col-dense grid-cols-2 grid-rows-[repeat(4,_auto)] justify-center gap-[1px] bg-amarillo px-[10%] py-12 md:grid-cols-4 md:grid-rows-[repeat(2,_auto)]">
             {data.frontpageFooterButtons.map(({ content, buttonText, buttonUrl }) => (
-              <div class="flex flex-col justify-end">
-                <h2 class="px-3 pb-4 text-xl">{content}</h2>
-                <a href={buttonUrl} class="px-4 py-3 font-bold outline outline-1 outline-[black]">
+              <>
+                <div className="flex flex-col justify-end">
+                  <h2 class="px-3 pb-4 text-xl">{content}</h2>
+                </div>
+                <a href={buttonUrl} class="mb-6 px-4 py-3 font-bold outline outline-1 outline-[black]">
                   {buttonText}
                 </a>
-              </div>
+              </>
             ))}
           </section>
           <section class="grid grid-cols-1 gap-8 bg-blanco px-[10%] py-8 md:grid-cols-10">
