@@ -76,7 +76,7 @@ export async function render(data) {
                 <LogoGrande containerClass="flex-1 min-w-[25vw]" class="w-100" />
               </div>
               <div class="flex flex-col justify-evenly bg-celeste px-[20%] py-[20%]">
-                <IconosLanding class="w-3xl min-w-[20vw] md:max-w-[50%]" />
+                <IconosLanding class="w-full min-w-[20vw] md:max-w-[50%]" />
                 <h2 class="my-[20%] text-[5vmax] leading-none md:my-[10%] md:text-[5vmin]">
                   Hackeamos
                   <br />
@@ -86,7 +86,7 @@ export async function render(data) {
                   <br />
                   <strong>equitativa</strong>
                 </h2>
-                <Wave class="mt-4 min-w-[12%] max-w-[40%] md:max-w-[20%]" />
+                <Wave class="mt-4 w-full min-w-[12%] max-w-[40%] md:max-w-[20%]" />
               </div>
             </section>
           </div>
@@ -136,14 +136,14 @@ export async function render(data) {
                 />
               </div>
               <div class="flex items-center gap-4">
-                <Wave containerClass="mx-8 shrink-[2] max-w-[10vw]" class="w-full" />
+                <Wave containerClass="mx-8 w-full shrink-[2] max-w-[10vw]" class="w-full" />
                 <img
                   class="mx-auto aspect-[1.94] w-8/12 flex-auto object-contain"
                   src="assets/img/imagen_celeste.webp"
                   alt="dos mujeres riendose mirando una tablet"
                   loading="lazy"
                 />
-                <Wave containerClass="mx-8 shrink-[2] max-w-[10vw]" class="w-full" />
+                <Wave containerClass="mx-8 w-full shrink-[2] max-w-[10vw]" class="w-full" />
               </div>
             </div>
             <VinculosPuntos class="m-16 mx-auto h-16" />
