@@ -45,7 +45,7 @@ export async function render(data) {
 
 	const meta = {
 		title: "Alfadatizar",
-		url: "https://staging.alfadatiz.ar/",
+		url: "https://alfadatizar.org/",
 		description:
 			"Digitalizamos escuelas de contextos vulnerables con un modelo sustentable basado en el liderazgo directivo.",
 	};
@@ -377,8 +377,8 @@ export async function render(data) {
 				<section class="flex flex-wrap items-end justify-between gap-8 bg-violeta px-[10%] py-24">
 					<LogoInline class="w-full max-w-[16rem]" />
 					{/* TODO: activar mail */}
-					<a class="text-xl" href="mailto:info@alfadatiz.ar">
-						info@alfadatiz.ar
+					<a class="text-xl" href="mailto:info@alfadatiz.org">
+						info@alfadatiz.org
 					</a>
 				</section>
 			</body>
