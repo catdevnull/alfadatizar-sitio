@@ -1,6 +1,5 @@
 // @ts-check
 import { defineConfig } from "astro/config";
-import yaml from "@rollup/plugin-yaml";
 
 import tailwind from "@astrojs/tailwind";
 
@@ -27,6 +26,6 @@ export default defineConfig({
     imageService: "compile",
   }),
   vite: {
-    plugins: [yaml()],
+    define: { "process.env": process.env },
   },
 });

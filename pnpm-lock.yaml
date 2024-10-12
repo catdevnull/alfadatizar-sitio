@@ -57,9 +57,6 @@ importers:
         specifier: ^5.6.3
         version: 5.6.3
     devDependencies:
-      '@rollup/plugin-yaml':
-        specifier: ^4.1.2
-        version: 4.1.2(rollup@4.24.0)
       '@tailwindcss/typography':
         specifier: ^0.5.15
         version: 0.5.15(tailwindcss@3.4.13)
@@ -1416,15 +1413,6 @@ packages:
     resolution: {integrity: sha512-FwsdSQ3UDIDORanQMGMLyzSUabw4AkKhwcRdPv4d5OT8GmJr7mBdZynfcsrKLJ0fzskIypMqspoutZidsI0MQg==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0
-
-  '@rollup/plugin-yaml@4.1.2':
-    resolution: {integrity: sha512-RpupciIeZMUqhgFE97ba0s98mOFS7CWzN3EJNhJkqSv9XLlWYtwVdtE6cDw6ASOF/sZVFS7kRJXftaqM2Vakdw==}
-    engines: {node: '>=14.0.0'}
-    peerDependencies:
-      rollup: ^1.20.0||^2.0.0||^3.0.0||^4.0.0
-    peerDependenciesMeta:
-      rollup:
-        optional: true
 
   '@rollup/pluginutils@5.1.2':
     resolution: {integrity: sha512-/FIdS3PyZ39bjZlwqFnWqCOVnW7o963LtKMwQOD0NhQqw22gSr2YY1afu3FxRip4ZCZNsD5jq6Aaz6QV3D/Njw==}
@@ -3565,10 +3553,6 @@ packages:
   to-regex-range@5.0.1:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
     engines: {node: '>=8.0'}
-
-  tosource@2.0.0-alpha.3:
-    resolution: {integrity: sha512-KAB2lrSS48y91MzFPFuDg4hLbvDiyTjOVgaK7Erw+5AmZXNq4sFRVn8r6yxSLuNs15PaokrDRpS61ERY9uZOug==}
-    engines: {node: '>=10'}
 
   trim-lines@3.0.1:
     resolution: {integrity: sha512-kRj8B+YHZCc9kQYdWfJB2/oUl9rA99qbowYYBtr4ui4mZyAQ2JpvVBd/6U2YloATfqBhBTSMhTpgBHtU0Mf3Rg==}
@@ -5890,14 +5874,6 @@ snapshots:
       '@react-types/overlays': 3.8.10(react@18.3.1)
       '@react-types/shared': 3.25.0(react@18.3.1)
       react: 18.3.1
-
-  '@rollup/plugin-yaml@4.1.2(rollup@4.24.0)':
-    dependencies:
-      '@rollup/pluginutils': 5.1.2(rollup@4.24.0)
-      js-yaml: 4.1.0
-      tosource: 2.0.0-alpha.3
-    optionalDependencies:
-      rollup: 4.24.0
 
   '@rollup/pluginutils@5.1.2(rollup@4.24.0)':
     dependencies:
@@ -8515,8 +8491,6 @@ snapshots:
   to-regex-range@5.0.1:
     dependencies:
       is-number: 7.0.0
-
-  tosource@2.0.0-alpha.3: {}
 
   trim-lines@3.0.1: {}
 
