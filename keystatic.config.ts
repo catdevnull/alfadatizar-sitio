@@ -21,7 +21,7 @@ export default config({
         image: fields.image({
           label: "Image",
           directory: "src/assets/images/authors",
-          publicPath: "../../assets/images/authors",
+          publicPath: "/src/assets/images/authors",
           // TODO: no funciona en astro 5, no se que será
           // publicPath: "@assets/images/authors",
         }),

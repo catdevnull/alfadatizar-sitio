@@ -23,7 +23,9 @@ export default defineConfig({
   //   contentLayer: true,
   // },
 
-  adapter: cloudflare(),
+  adapter: cloudflare({
+    imageService: "compile",
+  }),
   vite: {
     plugins: [yaml()],
   },
