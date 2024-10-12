@@ -27,11 +27,11 @@ const props = Astro.props;
     <meta property="og:description" content={meta.description} />
     <meta property="og:image" content={`${meta.url}assets/img/screenshot.png`} />
 
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={meta.url} />
-    <meta property="twitter:title" content={meta.title} />
-    <meta property="twitter:description" content={meta.description} />
-    <meta property="twitter:image" content={`${meta.url}assets/img/screenshot.png`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={meta.url} />
+    <meta name="twitter:title" content={meta.title} />
+    <meta name="twitter:description" content={meta.description} />
+    <meta name="twitter:image" content={`${meta.url}assets/img/screenshot.png`} />
   </head>
   <body class={props.class}>
     <slot />
