@@ -1,16 +1,12 @@
 import { config, fields, collection } from "@keystatic/core";
 
 export default config({
-  storage:
-    process.env.NODE_ENV === "development"
-      ? {
-          kind: "local",
-        }
-      : {
-          kind: "cloud",
-        },
-  cloud: {
-    project: "alfadatizar/alfadatizar-sitio",
+  storage: {
+    kind: "github",
+    repo: {
+      owner: "catdevnull",
+      name: "alfadatizar-sitio",
+    },
   },
   collections: {
     authors: collection({
