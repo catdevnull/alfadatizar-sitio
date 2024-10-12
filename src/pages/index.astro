@@ -18,9 +18,12 @@ import CuadradoDatos from "../assets/cuadrados/datos.svg?raw";
 import CuadradoEscuelas from "../assets/cuadrados/escuelas.svg?raw";
 import { getCollection } from "astro:content";
 
-const frontpageCuadrados = await getCollection("cuadrados");
-const frontpageNuevosSaberes = await getCollection("nuevosSaberes");
-const frontpageFooterButtons = await getCollection("footerButtons");
+import frontpageCuadrados from "../data/frontpage-cuadrados.json";
+import frontpageNuevosSaberes from "../data/frontpage-nuevos-saberes.json";
+import frontpageFooterButtons from "../data/frontpage-footer-buttons.json";
+// const frontpageCuadrados = await getCollection("cuadrados");
+// const frontpageNuevosSaberes = await getCollection("nuevosSaberes");
+// const frontpageFooterButtons = await getCollection("footerButtons");
 ---
 
 <GlobalLayout class="flex flex-col font-sans">
@@ -60,7 +63,7 @@ const frontpageFooterButtons = await getCollection("footerButtons");
       </h2>
       <div class="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4">
         {
-          frontpageNuevosSaberes.map(({ data: { número, título, content } }) => (
+          frontpageNuevosSaberes.map(({ número, título, content }) => (
             <div class="flex-1 border-l border-current px-6 py-6">
               <h3 class="pb-4 text-2xl italic">{número}</h3>
               <h3 class="pb-4 text-2xl font-bold">{título}</h3>
@@ -111,7 +114,7 @@ const frontpageFooterButtons = await getCollection("footerButtons");
   <section class="flex place-content-center bg-blanco">
     <div class="grid grid-cols-1 place-content-center xl:grid-cols-2">
       {
-        frontpageCuadrados.map(({ data: { color, título, content } }) => {
+        frontpageCuadrados.map(({ color, título, content }) => {
           // ¿por qué así en vez de `bg-${color}`? para que lo detecte tailwind.
           const classes: any = {
             celeste: "bg-celeste",
@@ -180,7 +183,7 @@ const frontpageFooterButtons = await getCollection("footerButtons");
     class="-mb-6 grid w-full grid-flow-col-dense grid-cols-2 grid-rows-[repeat(4,_auto)] justify-center gap-[1px] bg-amarillo px-[10%] py-12 md:grid-cols-4 md:grid-rows-[repeat(2,_auto)]"
   >
     {
-      frontpageFooterButtons.map(({ data: { content, buttonText, buttonUrl } }) => (
+      frontpageFooterButtons.map(({ content, buttonText, buttonUrl }) => (
         <>
           <div class="flex flex-col justify-end">
             <h2 class="px-3 pb-4 text-xl">{content}</h2>

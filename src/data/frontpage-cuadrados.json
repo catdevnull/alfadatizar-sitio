@@ -1,0 +1,26 @@
+[
+  {
+    "color": "celeste",
+    "slug": "celeste",
+    "título": "Alfabetizaciones",
+    "content": "Pedagogía que fusiona lenguajes naturales con computacionales implementamos en Latinoamérica proyectos internacionales de vanguardia."
+  },
+  {
+    "color": "amarillo",
+    "slug": "amarillo",
+    "título": "Docentes",
+    "content": "Capacitamos con becas a docentes motivados con la trasformación digital de la educación."
+  },
+  {
+    "color": "naranja",
+    "slug": "naranja",
+    "título": "Escuelas",
+    "content": "Digitalizamos escuelas de contextos vulnerables con un modelo sustentable basado en el liderazgo directivo."
+  },
+  {
+    "color": "violeta",
+    "slug": "violeta",
+    "título": "Datos",
+    "content": "Nos aliamos con plataformas educativas para facilitar el acceso a escuelas de contextos vulnerables al EdTech y analíticas escolares de aprendizaje."
+  }
+]

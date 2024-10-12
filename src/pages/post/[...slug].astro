@@ -1,7 +1,11 @@
 ---
 import { getEntry, getCollection } from "astro:content";
+import GeneralLayout from "../../layouts/GeneralLayout.astro";
+import Estrellita from "../../assets/vectors/estrellita.svg?raw";
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
 
-export const prerender = true;
+// export const prerender = true;
 export async function getStaticPaths() {
   const blogEntries = await getCollection("posts");
   return blogEntries.map((entry) => ({
@@ -10,9 +14,58 @@ export async function getStaticPaths() {
   }));
 }
 const entry = await getEntry("posts", Astro.params.slug);
+const author = await getEntry("authors", entry.data.author.id);
+const authorImage = author.data.image && (await import(author.data.image)).default;
 const { Content } = await entry.render();
+
+const formatter = Intl.DateTimeFormat("es-AR", {
+  dateStyle: "long",
+});
 ---
 
-<h1>{entry.data.title}</h1>
+<GeneralLayout>
+  <header class="p-4 max-w-3xl mx-auto w-full">
+    <p class="text-xl">
+      <time datetime={entry.data.date.toISOString()}>{formatter.format(entry.data.date)}</time>
+    </p>
+    <h1 class="text-5xl font-bold">{entry.data.title}</h1>
+    <div class="flex items-center gap-4 mt-4">
+      {authorImage && <Image src={authorImage} alt={author.data.name} class="w-16 h-16 rounded-full" />}
+      <p class="text-2xl">{author.data.name}</p>
+    </div>
+  </header>
 
-<Content />
+  <main class="p-4 max-w-3xl mx-auto w-full prose-neutral prose lg:prose-lg">
+    <Content />
+  </main>
+
+  <div class="p-2 mx-auto">
+    <div class="py-4 px-6 max-w-3xl w-full shadow-xl mb-4 border border-amarillo rounded-lg bg-white/20">
+      <h2 class="text-3xl font-bold flex gap-4 items-center leading-none justify-center md:justify-start">
+        <Fragment set:html={Estrellita.replace("<svg", '<svg class="h-[1em] w-[1em] shrink-0"')} />
+        {author.data.pronombres === "masculino" && "Sobre el autor"}
+        {author.data.pronombres === "femenino" && "Sobre la autora"}
+        {author.data.pronombres === "neutro" && "Sobre le autore"}
+        <Fragment set:html={Estrellita.replace("<svg", '<svg class="h-[1em] w-[1em] shrink-0"')} />
+      </h2>
+      <div class="flex items-center gap-4 my-4">
+        {authorImage && <Image src={authorImage} alt={author.data.name} class="w-16 h-16 rounded-full" />}
+        <p class="text-2xl font-bold">{author.data.name}</p>
+      </div>
+      <p>{author.data.bio}</p>
+      <div class="flex gap-4 pt-2">
+        {
+          author.data.twitter && (
+            <a
+              href={`https://twitter.com/${author.data.twitter}`}
+              class="flex items-center gap-1 leading-none border border-blue-400 rounded-full px-2 py-1"
+            >
+              <Icon name="radix-icons:twitter-logo" width="1.25em" height="1.25em" />
+              <span>@{author.data.twitter}</span>
+            </a>
+          )
+        }
+      </div>
+    </div>
+  </div>
+</GeneralLayout>

@@ -1,0 +1,18 @@
+---
+import LogoInline from "../assets/vectors/logo inline.svg?raw";
+import GlobalLayout from "./GlobalLayout.astro";
+---
+
+<GlobalLayout class="flex flex-col font-sans bg-blanco">
+  <nav class="w-full bg-blanco px-16 py-4">
+    <a href="/">
+      <Fragment set:html={LogoInline.replace("<svg", '<svg class="h-12 w-auto"')} />
+    </a>
+  </nav>
+  <slot />
+  <section class="flex flex-wrap items-end justify-between gap-8 bg-violeta px-[10%] py-24">
+    <Fragment set:html={LogoInline.replace("<svg", '<svg class="w-full max-w-[16rem]"')} />
+    {/* TODO: activar mail */}
+    <a class="text-xl" href="mailto:info@alfadatizar.org"> info@alfadatizar.org </a>
+  </section>
+</GlobalLayout>

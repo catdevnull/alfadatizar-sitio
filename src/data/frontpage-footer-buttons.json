@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "docente",
+    "content": "¿Sos docente y querés capacitarte?",
+    "buttonText": "Postula a una beca",
+    "buttonUrl": "mailto:info@alfadatizar.org"
+  },
+  {
+    "slug": "escuela",
+    "content": "¿Querés acelerar la transformación digital de tu escuela?",
+    "buttonText": "Escribinos",
+    "buttonUrl": "mailto:info@alfadatizar.org"
+  },
+  {
+    "slug": "municipio",
+    "content": "¿Querés transformar la educación de tu municipio?",
+    "buttonText": "Contactanos",
+    "buttonUrl": "mailto:info@alfadatizar.org"
+  },
+  {
+    "slug": "donar",
+    "content": "¿Querés hackear el futuro?",
+    "buttonText": "Doná",
+    "buttonUrl": "mailto:info@alfadatizar.org"
+  }
+]
