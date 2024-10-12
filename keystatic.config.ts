@@ -1,12 +1,65 @@
-import { config, fields, collection } from "@keystatic/core";
+import { config, fields, collection, singleton } from "@keystatic/core";
+
+const cuadrado = () => ({
+  título: fields.text({ label: "Título", validation: { isRequired: true } }),
+  content: fields.text({ label: "Contenido", validation: { isRequired: true } }),
+});
+const footerButton = () => ({
+  content: fields.text({ label: "Contenido", validation: { isRequired: true } }),
+  buttonText: fields.text({ label: "Texto del botón", validation: { isRequired: true } }),
+  buttonUrl: fields.url({ label: "URL del botón", validation: { isRequired: true } }),
+});
+const nuevosSaberes = () => ({
+  número: fields.text({ label: "Número", validation: { isRequired: true } }),
+  título: fields.text({ label: "Título", validation: { isRequired: true } }),
+  content: fields.text({ label: "Contenido", validation: { isRequired: true } }),
+});
 
 export default config({
-  storage: {
-    kind: "github",
-    repo: {
-      owner: "catdevnull",
-      name: "alfadatizar-sitio",
-    },
+  storage:
+    process.env.NODE_ENV === "production"
+      ? {
+          kind: "github",
+          repo: {
+            owner: "catdevnull",
+            name: "alfadatizar-sitio",
+          },
+        }
+      : { kind: "local" },
+  singletons: {
+    frontpageCuadrados: singleton({
+      label: "Frontpage - Cuadrados",
+      path: "src/data/frontpage-cuadrados",
+      format: "json",
+      schema: {
+        celeste: fields.object(cuadrado(), { label: "Celeste" }),
+        amarillo: fields.object(cuadrado(), { label: "Amarillo" }),
+        naranja: fields.object(cuadrado(), { label: "Naranja" }),
+        violeta: fields.object(cuadrado(), { label: "Violeta" }),
+      },
+    }),
+    frontpageFooterButtons: singleton({
+      label: "Frontpage - Footer Buttons",
+      path: "src/data/frontpage-footer-buttons",
+      format: "json",
+      schema: {
+        "01": fields.object(footerButton(), { label: "01" }),
+        "02": fields.object(footerButton(), { label: "02" }),
+        "03": fields.object(footerButton(), { label: "03" }),
+        "04": fields.object(footerButton(), { label: "04" }),
+      },
+    }),
+    frontpageNuevosSaberes: singleton({
+      label: "Frontpage - Nuevos Saberes",
+      path: "src/data/frontpage-nuevos-saberes",
+      format: "json",
+      schema: {
+        "1": fields.object(nuevosSaberes(), { label: "01" }),
+        "2": fields.object(nuevosSaberes(), { label: "02" }),
+        "3": fields.object(nuevosSaberes(), { label: "03" }),
+        "4": fields.object(nuevosSaberes(), { label: "04" }),
+      },
+    }),
   },
   collections: {
     authors: collection({
