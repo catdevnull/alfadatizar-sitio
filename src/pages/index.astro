@@ -80,7 +80,7 @@ const authorImages = import.meta.glob<{ default: ImageMetadata }>("/src/assets/i
         <span class="text-center">Nuevos saberes</span>{" "}
         <Fragment set:html={Estrellita.replace("<svg", '<svg class="h-[1em] w-[1em] shrink-0"')} />
       </h2>
-      <div class="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4">
+      <div class="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-2 lg:gap-8">
         {
           Object.values(frontpageNuevosSaberes).map(({ número, título, content }) => (
             <div class="flex-1 border-l border-current px-6 py-6">
