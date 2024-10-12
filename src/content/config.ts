@@ -1,4 +1,4 @@
-import { file } from "astro/loaders";
+import { file, glob } from "astro/loaders";
 import { z, defineCollection } from "astro:content";
 
 const cuadradosCollection = defineCollection({
@@ -28,8 +28,16 @@ const nuevosSaberesCollection = defineCollection({
   }),
 });
 
+const postsCollection = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+  }),
+});
+
 export const collections = {
   cuadrados: cuadradosCollection,
   footerButtons: footerButtonsCollection,
   nuevosSaberes: nuevosSaberesCollection,
+  posts: postsCollection,
 };
