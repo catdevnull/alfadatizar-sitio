@@ -32,12 +32,15 @@ const authorImages = import.meta.glob<{ default: ImageMetadata }>("/src/assets/i
 
 <GlobalLayout class="flex flex-col font-sans">
   <div class="flex min-h-screen w-full flex-col items-stretch">
-    <nav class="w-full bg-blanco px-16 py-4">
+    <nav class="w-full bg-blanco px-8 sm:px-16 py-4">
       <Fragment set:html={LogoInline.replace("<svg", '<svg class="h-12 w-auto"')} />
     </nav>
     <section class="grid flex-1 grid-cols-1 md:grid-cols-2 relative">
       <div class="flex min-h-[40vh] items-center justify-center bg-naranja p-[15%]">
-        <Fragment set:html={LogoGrande.replace("<svg", '<svg class="w-100"')} containerClass="flex-1 min-w-[25vw]" />
+        <Fragment
+          set:html={LogoGrande.replace("<svg", '<svg class="w-full h-full"')}
+          containerClass="flex-1 min-w-[25vw]"
+        />
       </div>
       <div class="flex flex-col justify-evenly bg-celeste px-[20%] py-[20%]">
         <Fragment set:html={IconosLanding.replace("<svg", '<svg class="w-full min-w-[20vw] md:max-w-[50%]"')} />
@@ -72,7 +75,7 @@ const authorImages = import.meta.glob<{ default: ImageMetadata }>("/src/assets/i
       <Fragment set:html={CaritasFelices} />
     </div>
     <div class="p-[10%] py-16">
-      <h2 class="flex items-center justify-center gap-4 pb-8 text-5xl font-bold leading-none">
+      <h2 class="flex items-center justify-center gap-4 pb-8 text-4xl sm:text-5xl font-bold leading-none">
         <Fragment set:html={Estrellita.replace("<svg", '<svg class="h-[1em] w-[1em] shrink-0"')} />{" "}
         <span class="text-center">Nuevos saberes</span>{" "}
         <Fragment set:html={Estrellita.replace("<svg", '<svg class="h-[1em] w-[1em] shrink-0"')} />
@@ -263,7 +266,7 @@ const authorImages = import.meta.glob<{ default: ImageMetadata }>("/src/assets/i
     </div>
   </section>
   <section class="flex flex-col gap-8 bg-blanco px-[10%] py-8">
-    <h2 class="flex items-center justify-center gap-4 pb-8 text-5xl font-bold leading-none">
+    <h2 class="flex items-center justify-center gap-4 pb-8 text-4xl sm:text-5xl font-bold leading-none">
       <Fragment set:html={Estrellita.replace("<svg", '<svg class="h-[1em] w-[1em] shrink-0"')} />{" "}
       <span class="text-center">Nuestro equipo</span>{" "}
       <Fragment set:html={Estrellita.replace("<svg", '<svg class="h-[1em] w-[1em] shrink-0"')} />
@@ -313,7 +316,7 @@ const authorImages = import.meta.glob<{ default: ImageMetadata }>("/src/assets/i
             )}
             <div class="col-span-2">
               <h3 class="text-3xl font-bold">{name}</h3>
-              <p class="text-xl">{role}</p>
+              <p class="text-xl break-words hyphens-auto">{role}</p>
             </div>
           </div>
         ))
