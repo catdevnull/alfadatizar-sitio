@@ -21,6 +21,8 @@ import { getCollection } from "astro:content";
 import frontpageCuadrados from "../data/frontpage-cuadrados.json";
 import frontpageNuevosSaberes from "../data/frontpage-nuevos-saberes.json";
 import frontpageFooterButtons from "../data/frontpage-footer-buttons.json";
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
 // const frontpageCuadrados = await getCollection("cuadrados");
 // const frontpageNuevosSaberes = await getCollection("nuevosSaberes");
 // const frontpageFooterButtons = await getCollection("footerButtons");
@@ -244,6 +246,60 @@ import frontpageFooterButtons from "../data/frontpage-footer-buttons.json";
           ))
         }
       </div>
+    </div>
+  </section>
+  <section class="flex flex-col gap-8 bg-blanco px-[10%] py-8">
+    <h2 class="flex items-center justify-center gap-4 pb-8 text-5xl font-bold leading-none">
+      <Fragment set:html={Estrellita.replace("<svg", '<svg class="h-[1em] w-[1em] shrink-0"')} />{" "}
+      <span class="text-center">Nuestro equipo</span>{" "}
+      <Fragment set:html={Estrellita.replace("<svg", '<svg class="h-[1em] w-[1em] shrink-0"')} />
+    </h2>
+    <div class="flex flex-wrap flex-col md:flex-row">
+      {
+        [
+          {
+            name: "Alejandro Artopoulos",
+            role: "Dirección",
+            image: "/src/assets/images/authors/alejandro-artopoulos/image.jpg",
+          },
+          {
+            name: "Jimena Huarte",
+            role: "Capacitación",
+          },
+          {
+            name: "Alejandra Literas",
+            role: "Tecnología",
+          },
+          {
+            name: "Alvar Maciel",
+            role: 'Clubes "Alfadatizar"',
+          },
+          {
+            name: 'Juan Manuel "CheChe"',
+            role: "Comunidades",
+          },
+          {
+            name: "Ariel Rotondo",
+            role: "Liderazgos Tecnopedagógicos",
+          },
+          {
+            name: "Dolores Fleitas",
+            role: "Nivel Inicial",
+          },
+        ].map(({ name, role, image }) => (
+          <div class="grid grid-cols-3 items-center gap-4 md:w-1/3 p-4">
+            {image ? (
+              <Image src={image} alt={name} class="rounded-full" width="512" height="512" />
+            ) : (
+              <Icon name="iconamoon:profile-circle-fill" width="512" height="512" class="w-full h-full" />
+            )}
+            <div class="col-span-2">
+              <h3 class="text-3xl font-bold">{name}</h3>
+              <p class="text-xl">{role}</p>
+            </div>
+          </div>
+        ))
+      }
     </div>
   </section>
   <section class="flex flex-wrap items-end justify-between gap-8 bg-violeta px-[10%] py-24">
