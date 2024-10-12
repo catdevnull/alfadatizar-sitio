@@ -26,6 +26,8 @@ import { Icon } from "astro-icon/components";
 // const frontpageCuadrados = await getCollection("cuadrados");
 // const frontpageNuevosSaberes = await getCollection("nuevosSaberes");
 // const frontpageFooterButtons = await getCollection("footerButtons");
+
+const authorImages = import.meta.glob<{ default: ImageMetadata }>("/src/assets/images/authors/**/*.{jpeg,jpg,png,gif}");
 ---
 
 <GlobalLayout class="flex flex-col font-sans">
@@ -260,7 +262,7 @@ import { Icon } from "astro-icon/components";
           {
             name: "Alejandro Artopoulos",
             role: "Dirección",
-            image: "/src/assets/images/authors/alejandro-artopoulos/image.jpg",
+            image: authorImages["/src/assets/images/authors/alejandro-artopoulos/image.jpg"],
           },
           {
             name: "Jimena Huarte",
@@ -289,7 +291,7 @@ import { Icon } from "astro-icon/components";
         ].map(({ name, role, image }) => (
           <div class="grid grid-cols-3 items-center gap-4 md:w-1/3 p-4">
             {image ? (
-              <Image src={image} alt={name} class="rounded-full" width="512" height="512" />
+              <Image src={image()} alt={name} class="rounded-full" width="512" height="512" />
             ) : (
               <Icon name="iconamoon:profile-circle-fill" width="512" height="512" class="w-full h-full" />
             )}
