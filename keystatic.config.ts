@@ -1,9 +1,15 @@
 import { config, fields, collection } from "@keystatic/core";
 
 export default config({
-  storage: {
-    kind: "local",
-  },
+  storage:
+    process.env.NODE_ENV === "development"
+      ? {
+          kind: "local",
+        }
+      : {
+          kind: "github",
+          repo: "catdevnull/alfadatizar-sitio",
+        },
   collections: {
     authors: collection({
       label: "Authors",
