@@ -1,0 +1,14 @@
+- [x] agregar `<title>` y `<meta description>`
+- [x] verificar textos nuevos saberes
+- [x] verificar textos cuadrados
+- [x] verificar textos video
+- [ ] agregar 4 links
+- [x] agregar mail en footer
+- [x] agregar sponsors
+
+- [x] verificar SEO
+  - [ ] Twitter
+  - [x] Facebook
+  - [x] Instagram
+  - [x] WhatsApp
+  - [x] Telegram
