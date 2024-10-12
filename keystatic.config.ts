@@ -7,9 +7,11 @@ export default config({
           kind: "local",
         }
       : {
-          kind: "github",
-          repo: "catdevnull/alfadatizar-sitio",
+          kind: "cloud",
         },
+  cloud: {
+    project: "alfadatizar/alfadatizar-sitio",
+  },
   collections: {
     authors: collection({
       label: "Authors",
