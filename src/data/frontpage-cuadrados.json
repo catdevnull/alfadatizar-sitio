@@ -1,18 +1,18 @@
 {
   "celeste": {
-    "título": "Alfabetizaciones",
-    "content": "Pedagogía que fusiona lenguajes naturales con computacionales implementamos en Latinoamérica proyectos internacionales de vanguardia."
+    "título": "Tecnologías",
+    "content": "Incubamos proyectos de tecnologías de aprendizaje de competencias digitales criticas y nos aliamos con EdTechs para facilitar el acceso de escuelas vulnerables."
   },
   "amarillo": {
     "título": "Docentes",
-    "content": "Capacitamos con becas a docentes motivados con la trasformación digital de la educación."
+    "content": "Capacitamos con becas a docentes motivados con la alfabetización integral en IA. Con un modelo de formación sustentable que combina tutorías, acompañamiento en aula y materiales en línea."
   },
   "naranja": {
-    "título": "Escuelas",
-    "content": "Digitalizamos escuelas de contextos vulnerables con un modelo sustentable basado en el liderazgo directivo."
+    "título": "Comunidades",
+    "content": "La alfabetización integral en IA también es necesaria para jóvenes y adultos para su inserción laboral y para sus roles de líderes comunitarios concientes del activismo por igualdad digital."
   },
   "violeta": {
-    "título": "Datos",
-    "content": "Nos aliamos con plataformas educativas para facilitar el acceso a escuelas de contextos vulnerables al EdTech y analíticas escolares de aprendizaje."
+    "título": "Escuelas",
+    "content": "Digitalizamos escuelas con planes digitales sustentables con liderazgo directivo, notebooks asequibles y conectividad."
   }
 }
