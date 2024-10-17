@@ -32,8 +32,9 @@ const authorsCollection = defineCollection({
   type: "data",
   schema: z.object({
     name: z.string(),
-    bio: z.string(),
-    image: z.string(),
+    rol: z.string(),
+    bio: z.string().optional(),
+    image: z.string().optional(),
     pronombres: z.enum(["masculino", "femenino", "neutro"]),
     twitter: z.string().optional(),
   }),

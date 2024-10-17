@@ -21,6 +21,7 @@ import { getCollection } from "astro:content";
 import frontpageCuadrados from "../data/frontpage-cuadrados.json";
 import frontpageNuevosSaberes from "../data/frontpage-nuevos-saberes.json";
 import frontpageFooterButtons from "../data/frontpage-footer-buttons.json";
+import frontpageTeam from "../data/frontpage-team.json";
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 // const frontpageCuadrados = await getCollection("cuadrados");
@@ -28,6 +29,11 @@ import { Icon } from "astro-icon/components";
 // const frontpageFooterButtons = await getCollection("footerButtons");
 
 const authorImages = import.meta.glob<{ default: ImageMetadata }>("/src/assets/images/authors/**/*.{jpeg,jpg,png,gif}");
+
+const authors = await getCollection("authors");
+const sortedAuthors = frontpageTeam.personas
+  .map((persona) => authors.find((author) => author.id === persona))
+  .filter((x) => !!x);
 ---
 
 <GlobalLayout class="flex flex-col font-sans">
@@ -273,44 +279,10 @@ const authorImages = import.meta.glob<{ default: ImageMetadata }>("/src/assets/i
     </h2>
     <div class="flex flex-wrap flex-col md:flex-row justify-evenly">
       {
-        [
-          {
-            name: "Alejandro Artopoulos",
-            role: "Dirección",
-            image: authorImages["/src/assets/images/authors/alejandro-artopoulos/image.jpg"],
-          },
-          {
-            name: "Jimena Huarte",
-            role: "Capacitación",
-          },
-          {
-            name: "Alejandra Literas",
-            role: "Tecnología",
-          },
-          {
-            name: "Alvar Maciel",
-            role: "Clubes",
-          },
-          {
-            name: 'Juan Manuel "CheChe"',
-            role: "Comunidades",
-          },
-          {
-            name: "Ariel Rotondo",
-            role: "Liderazgos Tecnopedagógicos",
-          },
-          {
-            name: "Dolores Fleitas",
-            role: "Nivel Inicial",
-          },
-          {
-            name: "Ricardo Castro",
-            role: "Relaciones Públicas",
-          },
-        ].map(({ name, role, image }) => (
+        sortedAuthors.map(({ data: { name, rol, image } }) => (
           <div class="grid grid-cols-3 items-center gap-4 md:w-1/3 py-2 sm:p-4">
             {image ? (
-              <Image src={image()} alt={name} class="" width="512" height="512" />
+              <Image src={authorImages[image]()} alt={name} class="" width="512" height="512" />
             ) : (
               <div class="bg-celeste aspect-square">
                 <Icon name="iconamoon:profile-fill" width="512" height="512" class="w-full h-full" />
@@ -318,7 +290,7 @@ const authorImages = import.meta.glob<{ default: ImageMetadata }>("/src/assets/i
             )}
             <div class="col-span-2">
               <h3 class="text-3xl font-bold">{name}</h3>
-              <p class="text-xl break-words hyphens-auto">{role}</p>
+              <p class="text-xl break-words hyphens-auto">{rol}</p>
             </div>
           </div>
         ))

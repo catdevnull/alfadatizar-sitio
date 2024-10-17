@@ -60,6 +60,17 @@ export default config({
         "4": fields.object(nuevosSaberes(), { label: "04" }),
       },
     }),
+    frontpageTeam: singleton({
+      label: "Frontpage - Equipo",
+      path: "src/data/frontpage-team",
+      format: "json",
+      schema: {
+        personas: fields.array(fields.relationship({ label: "Persona", collection: "authors" }), {
+          label: "Personas",
+          itemLabel: ({ value }) => value!,
+        }),
+      },
+    }),
   },
   collections: {
     authors: collection({
@@ -68,14 +79,6 @@ export default config({
       path: "src/content/authors/*",
       schema: {
         name: fields.slug({ name: { label: "Name" } }),
-        bio: fields.text({ label: "Bio" }),
-        image: fields.image({
-          label: "Image",
-          directory: "src/assets/images/authors",
-          publicPath: "/src/assets/images/authors",
-          // TODO: no funciona en astro 5, no se que será
-          // publicPath: "@assets/images/authors",
-        }),
         pronombres: fields.select({
           label: "Pronombres",
           options: [
@@ -84,6 +87,15 @@ export default config({
             { label: "Neutro (elle)", value: "neutro" },
           ],
           defaultValue: "neutro",
+        }),
+        rol: fields.text({ label: "Rol", validation: { isRequired: true } }),
+        bio: fields.text({ label: "Bio" }),
+        image: fields.image({
+          label: "Image",
+          directory: "src/assets/images/authors",
+          publicPath: "/src/assets/images/authors",
+          // TODO: no funciona en astro 5, no se que será
+          // publicPath: "@assets/images/authors",
         }),
         twitter: fields.text({ label: "Twitter", description: "Twitter handle without the @ symbol" }),
       },
