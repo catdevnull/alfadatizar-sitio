@@ -259,14 +259,14 @@ const authorImages = import.meta.glob<{ default: ImageMetadata }>("/src/assets/i
       <div class="grid flex-1 grid-cols-2 place-content-evenly items-center gap-4">
         {
           Array.from({ length: 4 }).map((_, i) => (
-            <div class="bg-stone-800/15 px-4 py-4 lg:py-12 rounded-lg text-bold text-center">Tu empresa acá</div>
+            <div class="bg-stone-800/15 px-4 py-4 lg:py-12 text-bold text-center">Tu empresa acá</div>
           ))
         }
       </div>
     </div>
   </section>
-  <section class="flex flex-col gap-8 bg-blanco px-[10%] py-8">
-    <h2 class="flex items-center justify-center gap-4 pb-8 text-4xl sm:text-5xl font-bold leading-none">
+  <section class="flex flex-col gap-8 bg-blanco px-[5%] sm:px-[10%] py-8">
+    <h2 class="flex items-center justify-center gap-4 pb-4 sm:pb-8 text-4xl sm:text-5xl font-bold leading-none">
       <Fragment set:html={Estrellita.replace("<svg", '<svg class="h-[1em] w-[1em] shrink-0"')} />{" "}
       <span class="text-center">Nuestro equipo</span>{" "}
       <Fragment set:html={Estrellita.replace("<svg", '<svg class="h-[1em] w-[1em] shrink-0"')} />
@@ -308,11 +308,13 @@ const authorImages = import.meta.glob<{ default: ImageMetadata }>("/src/assets/i
             role: "Relaciones Públicas",
           },
         ].map(({ name, role, image }) => (
-          <div class="grid grid-cols-3 items-center gap-4 md:w-1/3 p-4">
+          <div class="grid grid-cols-3 items-center gap-4 md:w-1/3 py-2 sm:p-4">
             {image ? (
-              <Image src={image()} alt={name} class="rounded-full" width="512" height="512" />
+              <Image src={image()} alt={name} class="" width="512" height="512" />
             ) : (
-              <Icon name="iconamoon:profile-circle-fill" width="512" height="512" class="w-full h-full" />
+              <div class="bg-celeste aspect-square">
+                <Icon name="iconamoon:profile-fill" width="512" height="512" class="w-full h-full" />
+              </div>
             )}
             <div class="col-span-2">
               <h3 class="text-3xl font-bold">{name}</h3>
